@@ -31,7 +31,9 @@
 #+LATEX_HEADER: \graphicspath{{../output/figures/}{../lib/}}
 #+LATEX_HEADER: \usepackage[export]{adjustbox}
 #+LATEX_HEADER: \usepackage{graphicx,caption}
+#+LATEX_HEADER: \usepackage{minted}
 #+LATEX_HEADER: \usepackage{eurosym}
+#+LATEX_HEADER: \usepackage{listings}
 #+LATEX_HEADER: \usepackage{textcomp}
 #+LATEX_HEADER: \usepackage{bibentry}
 #+LATEX_HEADER: \date{}
@@ -44,7 +46,7 @@
 #+LATEX_HEADER: \normalsize{$^{1}$Department of Psychiatry,} 
 #+LATEX_HEADER: \normalsize{The Donald and Barbara Zucker}
 #+LATEX_HEADER: \normalsize{School of Medicine at Northwell/Hofstra,}
-#+LATEX_HEADER: \normalsize{Hempstead, NY}\\
+#+LATEX_HEADER: \normalsize{Hempstead, NY}
 #+LATEX_HEADER: }
 # ----------------------------------------------------------------------
 ** Buffer-wide source code blocks                               :ignore:
@@ -55,6 +57,12 @@
 # buffer
 #+BEGIN_SRC emacs-lisp :exports none :results silent
 
+  ; Nicer formatting for code
+  (setq org-latex-listings t)
+  (setq org-latex-listings 'minted)
+  '(org-export-latex-listings-langs (quote ((emacs-lisp "Lisp") (lisp "Lisp") (clojure "Lisp") (c "C") (cc "C++") (fortran "fortran") (perl "Perl") (cperl "Perl") (python "Python") (ruby "Ruby") (html "HTML") (xml "XML") (tex "TeX") (latex "TeX") (shell-script "bash") (gnuplot "Gnuplot") (ocaml "Caml") (caml "Caml") (sql "SQL") (sqlite "sql") (R-mode "R"))))
+  (setq org-latex-minted-options
+     '(("linenos=true")))
   ; set timestamp format
   ;(setq org-export-date-timestamp-format "%FT%T%z")
   (require 'org-wc)
@@ -132,7 +140,7 @@
 
 ** Left column                                                  :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.45\textwidth
+:BEAMER_col: 0.45
 :BEAMER_opt: [t]
 :END:
 *** Background                                                 :B_block:
@@ -140,51 +148,109 @@
 :BEAMER_env: block
 :END:
 - Org-mode is not only useful for producing blog posts and even
-  scientific manuscripts; it is also perfectly suitable to produce
-  decent looking scientific posters.
+  scientific manuscripts; it is also perfectly suitable to make 
+  decent looking scientific posters
 - We combine a relatively simple custom \LaTeX style file and common
   org-mode syntax
+- The nice thing about org-mode is that we can populate the poster with
+  code, graphs and numbers from inline code in languages such as R,
+  python, Matlab and even shell scripting
+- Inline code would look like this, which will produce a graph
+  (Fig. [[figcode1]]):
 
-*** Methods: Part 1                                                 :B_block:
+**** Block
+:PROPERTIES:
+:BEAMER_col: 0.48
+:BEAMER_opt: [T]
+:END:
+
+#+NAME: code1
+#+BEGIN_SRC R :session :export both :results output graphics :file 3.png 
+x <- rnorm(100, 0, 1)
+hist(x, col="gray")
+#+END_SRC
+
+#+RESULTS: code1
+[[file:3.png]]
+
+
+#+NAME: figcode1
+#+CAPTION: This is the output.
+[[file:3.png]]
+
+*** Methods: Inline code and tables                            :B_block:
 :PROPERTIES:
 :BEAMER_env: block
 :END:
+- In addition to inline code, we can also produce tables
+- Tables are very powerful in org-mode, they even include spreadsheet
+  capabilities
+- Some code to process the vector from above to make a table out of its
+  summary could look like this, which would result in a little table
+  (Table [[tabcode2]]) :
 
-\captionsetup{justification=justified,width=.85\linewidth}
-#+NAME: figflowchart
-#+CAPTION: *This could be a figure.*
-#+ATTR_LATEX: :width 0.85\textwidth 
-[[file:org-mode-poster-1.png]]
-
-*** Methods: Part 2                                                 :B_block:
+**** Block
 :PROPERTIES:
-:BEAMER_env: block
+:BEAMER_col: 0.48
+:BEAMER_opt: [T]
 :END:
 
-\captionsetup{justification=justified,width=.85\linewidth}
-#+NAME: figshrinkage
-#+CAPTION: *This could be another figure.* 
-#+ATTR_LATEX: :width 0.85\textwidth
-[[file:org-mode-poster-2.png]]
+#+NAME: code2
+#+BEGIN_SRC R :session :exports both :results value :colnames yes :cache yes
+m <- round(mean(x), 2)
+s <- round(sd(x), 2)
+data.frame(Mean=m, SD=s)
+#+END_SRC
+
+\vspace{2cm}
+
+#+CAPTION: A table.
+#+NAME: tabcode2
+#+RESULTS[31e41e0f8cc2db2fb601af81fe4f5e218ea48f57]: code2
+|-------+------|
+|  Mean |   SD |
+|-------+------|
+| -0.07 | 0.97 |
+|-------+------|
+
+
 
 ** Right column                                                 :BMCOL:
 :PROPERTIES:
-:BEAMER_col: 0.45\textwidth
+:BEAMER_col: 0.45
 :BEAMER_opt: [t]
 :END:
-*** Results: Part 1                                                 :B_block:
+*** Results: graphics                                          :B_block:
 :PROPERTIES:
 :BEAMER_env: block
 :END:
 
+- Of course we can also include graphics
+- Here, we use shell scripting to grab an image with curl from the
+  internet (Fig. [[figcode3]]):
 
-\captionsetup{justification=justified,width=.8\linewidth}
-#+NAME: figplsbrains
-#+CAPTION: *Another figure* 
-#+ATTR_LATEX: :width 0.8\textwidth
-[[file:org-mode-poster-3.png]]
+**** Block
+:PROPERTIES:
+:BEAMER_col: 0.78
+:BEAMER_opt: [T]
+:END:
 
-*** Results: Part 2                                                 :B_block:
+\small
+#+NAME: code3
+#+BEGIN_SRC sh :exports both :file emacs.png  
+curl -0 https://www.gnu.org/software/emacs/images/emacs.png
+#+END_SRC
+\normalsize
+
+\vspace{2cm}
+
+#+ATTR_LATEX: :width 0.2\textwidth :options page=9
+#+NAME: figcode3
+#+CAPTION: This is the downloaded image.
+#+RESULTS: code3
+[[file:emacs.png]]
+
+*** Results: columns                                           :B_block:
 :PROPERTIES:
 :BEAMER_env: block
 :END:
@@ -197,7 +263,7 @@
 
 \captionsetup{justification=justified,width=.8\linewidth}
 #+NAME: figge
-#+CAPTION: *This is another figure*
+#+CAPTION: *This is the left figure of a two-column block*
 #+ATTR_LATEX: :width 0.9\textwidth :options page=3
 [[file:org-mode-poster-4.png]]
 
@@ -209,7 +275,7 @@
 
 \captionsetup{justification=justified,width=.8\linewidth}
 #+NAME: figclus
-#+CAPTION: *This is the right column of this box*
+#+CAPTION: *This is the right figure.*
 #+ATTR_LATEX: :width 0.9\textwidth :options page=9
 [[file:org-mode-poster-4.png]]
 
@@ -217,7 +283,6 @@
 :PROPERTIES:
 :BEAMER_env: block
 :END:
-- This example shows how incredibly versatile org-mode is. One can now
-  produce scientific posters with a text editor (preferably emacs).
-
-	
+- This little example is meant to show how incredibly versatile
+  org-mode is 
+- One can now produce scientific posters with a simple text editor 

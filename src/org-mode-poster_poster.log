@@ -1,6 +1,6 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2018.3.30)  2 APR 2018 04:55
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2018.3.30)  2 APR 2018 13:40
 entering extended mode
- restricted \write18 enabled.
+ \write18 enabled.
  %&-line parsing enabled.
 **org-mode-poster_poster.tex
 (./org-mode-poster_poster.tex
@@ -668,44 +668,8 @@ fault.sty
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/themes/outer/beamerouterthemede
 fault.sty))) (./beamerthemeph.sty
 Package: beamerthemeph 
-
-
-! Package keyval Error: fg undefined.
-
-See the keyval package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.51 ...font{footline}{fg=white, size=\normalsize}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package keyval Error: bg undefined.
-
-See the keyval package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.70 ...rge,series=\bf,bg=i6colorscheme1,fg=white}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-! Package keyval Error: fg undefined.
-
-See the keyval package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.70 ...rge,series=\bf,bg=i6colorscheme1,fg=white}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-) (/usr/share/texlive/texmf-dist/tex/latex/beamerposter/beamerposter.sty
+)
+(/usr/share/texlive/texmf-dist/tex/latex/beamerposter/beamerposter.sty
 Package: beamerposter 2015/04/21 v.1.12 latex-beamer poster extension
 
 (/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
@@ -895,10 +859,32 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: Hyperref support is turned off
 (caption)             because hyperref has stopped early.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/eurosym/eurosym.sty
-Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
-\@eurobox=\box58
+(/usr/share/texlive/texmf-dist/tex/latex/minted/minted.sty
+Package: minted 2017/07/19 v2.5 Yet another Pygments shim for LaTeX
+
+(/usr/share/texlive/texmf-dist/tex/latex/fvextra/fvextra.sty
+Package: fvextra 2017/07/08 v1.3.1 fvextra - extensions and patches for fancyvr
+b
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count172
+\FV@InFile=\read2
+\FV@TabBox=\box58
+\c@FancyVerbLine=\count173
+\FV@StepNumber=\count174
+\FV@OutFile=\write5
+)
+(/usr/share/texlive/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+
 (/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
@@ -980,70 +966,205 @@ Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
 Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+))
+(/usr/share/texlive/texmf-dist/tex/latex/lineno/lineno.sty
+Package: lineno 2005/11/02 line numbers on paragraphs v4.41
+Invalid UTF-8 byte or sequence at line 296 replaced by U+FFFD.
+\linenopenalty=\count175
+\output=\toks46
+\linenoprevgraf=\count176
+\linenumbersep=\dimen269
+\linenumberwidth=\dimen270
+\c@linenumber=\count177
+\c@pagewiselinenumber=\count178
+\c@LN@truepage=\count179
+\c@internallinenumber=\count180
+\c@internallinenumbers=\count181
+\quotelinenumbersep=\dimen271
+\bframerule=\dimen272
+\bframesep=\dimen273
+\bframebox=\box59
+LaTeX Info: Redefining \\ on input line 3056.
 )
+\c@FV@TrueTabGroupLevel=\count182
+\c@FV@TrueTabCounter=\count183
+\FV@TabBox@Group=\box60
+\FV@TmpLength=\skip59
+\c@FV@HighlightLinesStart=\count184
+\c@FV@HighlightLinesStop=\count185
+\FV@LoopCount=\count186
+\FV@NCharsBox=\box61
+\FV@BreakIndent=\dimen274
+\FV@BreakIndentNChars=\count187
+\FV@BreakSymbolSepLeft=\dimen275
+\FV@BreakSymbolSepLeftNChars=\count188
+\FV@BreakSymbolSepRight=\dimen276
+\FV@BreakSymbolSepRightNChars=\count189
+\FV@BreakSymbolIndentLeft=\dimen277
+\FV@BreakSymbolIndentLeftNChars=\count190
+\FV@BreakSymbolIndentRight=\dimen278
+\FV@BreakSymbolIndentRightNChars=\count191
+\c@FancyVerbLineBreakLast=\count192
+\FV@LineBox=\box62
+\FV@LineIndentBox=\box63
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count193
+\calc@Bcount=\count194
+\calc@Adimen=\dimen279
+\calc@Bdimen=\dimen280
+\calc@Askip=\skip60
+\calc@Bskip=\skip61
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count195
+\calc@Cskip=\skip62
+)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2016/06/07 v0.02a unified shell escape interface for LaTeX
+Package shellesc Info: Unrestricted shell escape enabled on input line 67.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/ifplatform/ifplatform.sty
+Package: ifplatform 2010/10/22 v0.4 Testing for the operating system
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/catchfile.sty
+Package: catchfile 2016/05/16 v1.7 Catch the contents of a file (HO)
+)
+runsystem(uname -s > "org-mode-poster_poster.w18")...executed.
+
+
+(./org-mode-poster_poster.w18)
+runsystem(rm -- "org-mode-poster_poster.w18")...executed.
+
+)
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xstring/xstring.tex
+\@xs@message=\write6
+\integerpart=\count196
+\decimalpart=\count197
+)
+Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip63
+\fb@frw=\dimen281
+\fb@frh=\dimen282
+\FrameRule=\dimen283
+\FrameSep=\dimen284
+)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count198
+\float@exts=\toks47
+\float@box=\box64
+\@float@everytoks=\toks48
+\@floatcapt=\box65
+)
+\minted@appexistsfile=\read3
+\minted@bgbox=\box66
+\minted@code=\write7
+\c@minted@FancyVerbLineTemp=\count199
+\c@minted@pygmentizecounter=\count266
+\@float@every@listing=\toks49
+\c@listing=\count267
+)
+runsystem(mkdir -p _minted-org-mode-poster_poster)...executed.
+
+
+(/usr/share/texlive/texmf-dist/tex/latex/eurosym/eurosym.sty
+Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
+\@eurobox=\box67
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count268
+\lst@gtempboxa=\box68
+\lst@token=\toks50
+\lst@length=\count269
+\lst@currlwidth=\dimen285
+\lst@column=\count270
+\lst@pos=\count271
+\lst@lostspace=\dimen286
+\lst@width=\dimen287
+\lst@newlines=\count272
+\lst@lineno=\count273
+\lst@maxwidth=\dimen288
+
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count274
+\lst@skipnumbers=\count275
+\lst@framebox=\box69
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
 (/usr/share/texlive/texmf-dist/tex/latex/natbib/bibentry.sty
 Package: bibentry 2007/10/30 1.5 (PWD)
 )
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 28.
+(hyperref)                removing `math shift' on input line 30.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 28.
+(hyperref)                removing `superscript' on input line 30.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 28.
+(hyperref)                removing `math shift' on input line 30.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 28.
+(hyperref)                removing `\\' on input line 30.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 28.
+(hyperref)                removing `math shift' on input line 30.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `superscript' on input line 28.
+(hyperref)                removing `superscript' on input line 30.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 28.
+(hyperref)                removing `math shift' on input line 30.
 
+runsystem(which pygmentize && touch org-mode-poster_poster.aex)...executed.
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\\' on input line 28.
+runsystem(rm org-mode-poster_poster.aex)...executed.
 
 (./org-mode-poster_poster.aux)
 \openout1 = `org-mode-poster_poster.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 32.
-LaTeX Font Info:    ... okay on input line 32.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 32.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 32.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 34.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 32.
+LaTeX Font Info:    ... okay on input line 34.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -1080,8 +1201,8 @@ LaTeX Font Info:    ... okay on input line 32.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box59
-Package hyperref Info: Link coloring OFF on input line 32.
+\AtBeginShipoutBox=\box70
+Package hyperref Info: Link coloring OFF on input line 34.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1089,58 +1210,58 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count172
+\c@section@level=\count276
 )
-LaTeX Info: Redefining \ref on input line 32.
-LaTeX Info: Redefining \pageref on input line 32.
-LaTeX Info: Redefining \nameref on input line 32.
+LaTeX Info: Redefining \ref on input line 34.
+LaTeX Info: Redefining \pageref on input line 34.
+LaTeX Info: Redefining \nameref on input line 34.
 
 (./org-mode-poster_poster.out) (./org-mode-poster_poster.out)
-\@outlinefile=\write5
-\openout5 = `org-mode-poster_poster.out'.
+\@outlinefile=\write8
+\openout8 = `org-mode-poster_poster.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 32.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 34.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 32.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 34.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmr/m/n on input line 32.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 32.
+(Font)                  OT1/cmss/m/n --> TU/lmr/m/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> TU/lmss/bx/n on input line 32.
+(Font)                  OT1/cmr/bx/n --> TU/lmss/bx/n on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> TU/lmss/bx/n on input line 32.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 32.
+(Font)                  OT1/cmr/bx/n --> TU/lmss/bx/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 32.
+(Font)                  OT1/cmss/m/n --> TU/lmss/m/n on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmss/m/n on input line 32.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 32.
+(Font)                  OT1/cmss/bx/n --> TU/lmss/m/n on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> TU/lmss/m/it on input line 32.
+(Font)                  OT1/cmr/m/it --> TU/lmss/m/it on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> TU/lmss/m/it on input line 32.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 32.
+(Font)                  OT1/cmr/bx/it --> TU/lmss/m/it on input line 34.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 32.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 32.
+(Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 34.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  TU/lmss/m/n --> TU/lmss/bx/n on input line 32.
+(Font)                  TU/lmss/m/n --> TU/lmss/bx/n on input line 34.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  TU/lmss/m/it --> TU/lmss/bx/it on input line 32.
+(Font)                  TU/lmss/m/it --> TU/lmss/bx/it on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> TU/lmr/bx/n on input line 32.
+(Font)                  OT1/cmss/bx/n --> TU/lmr/bx/n on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  TU/lmss/bx/n --> TU/lmss/bx/n on input line 32.
+(Font)                  TU/lmss/bx/n --> TU/lmss/bx/n on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  TU/lmss/m/n --> TU/lmss/bx/n on input line 32.
+(Font)                  TU/lmss/m/n --> TU/lmss/bx/n on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  TU/lmss/m/it --> TU/lmss/bx/it on input line 32.
+(Font)                  TU/lmss/m/it --> TU/lmss/bx/it on input line 34.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  TU/lmtt/m/n --> TU/lmtt/bx/n on input line 32.
+(Font)                  TU/lmtt/m/n --> TU/lmtt/bx/n on input line 34.
 
 (/usr/share/texlive/texmf-dist/tex/latex/beamer/translator/dicts/translator-bas
 ic-dictionary/translator-basic-dictionary-English.dict
@@ -1167,7 +1288,10 @@ orem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
 Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: float package is loaded.
+Package caption Info: listings package is loaded.
 Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count277
 
 (./org-mode-poster_poster.nav)
 File: ../lib/logo_feinstein.pdf Graphic file (type pdf)
@@ -1175,146 +1299,58 @@ File: ../lib/logo_feinstein.pdf Graphic file (type pdf)
 File: ../lib/twittergithub.pdf Graphic file (type pdf)
 <use ../lib/twittergithub.pdf>
 
-Overfull \hbox (28.45274pt too wide) in paragraph at lines 32--32
+Overfull \hbox (28.45274pt too wide) in paragraph at lines 34--34
  [][]  
  []
 
-LaTeX Font Info:    Calculating math sizes for size <41.8> on input line 32.
+LaTeX Font Info:    Calculating math sizes for size <41.8> on input line 34.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <41.8> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 32.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 34.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <29.25987> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 32.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 34.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <20.9> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 32.
-LaTeX Font Info:    Calculating math sizes for size <34.83> on input line 32.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 34.
+LaTeX Font Info:    Calculating math sizes for size <34.83> on input line 34.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <34.83> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 32.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 34.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <24.38089> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 32.
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 34.
 LaTeX Font Info:    Font shape `TU/lmss/m/it' in size <17.415> not available
-(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 32.
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.32 \begin{document}
-                     
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
+(Font)              Font shape `TU/lmss/m/sl' tried instead on input line 34.
 File: ../lib/logo.pdf Graphic file (type pdf)
 <use ../lib/logo.pdf>
-! Missing number, treated as zero.
-<to be read again> 
-                   \relax 
-l.111 \end{frame}
-                 
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
+\openout4 = `org-mode-poster_poster.1.vrb'.
 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \relax 
-l.111 \end{frame}
-                 
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
+(./org-mode-poster_poster.1.vrb
+\openout5 = `org-mode-poster_poster.pyg'.
 
-File: ../lib/org-mode-poster-1.png Graphic file (type bmp)
-<../lib/org-mode-poster-1.png>
-File: ../lib/org-mode-poster-2.png Graphic file (type bmp)
-<../lib/org-mode-poster-2.png>
-! Missing number, treated as zero.
-<to be read again> 
-                   \relax 
-l.111 \end{frame}
-                 
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \relax 
-l.111 \end{frame}
-                 
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
+(./_minted-org-mode-poster_poster/default-pyg-prefix.pygstyle)
+(./_minted-org-mode-poster_poster/default.pygstyle)
+(./_minted-org-mode-poster_poster/389596856EFA66687069B9CBCBD532917206BDF2FB974
+3A1FCD8E321435A60EC.pygtex)
+File: 3.png Graphic file (type bmp)
+<3.png>
+\openout5 = `org-mode-poster_poster.pyg'.
 
-! Missing number, treated as zero.
-<to be read again> 
-                   \relax 
-l.111 \end{frame}
-                 
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
 
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \relax 
-l.111 \end{frame}
-                 
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
+(./_minted-org-mode-poster_poster/B896A699ED857585AC055683BE05F6697206BDF2FB974
+3A1FCD8E321435A60EC.pygtex
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <41.8> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 2.
+)
+\openout5 = `org-mode-poster_poster.pyg'.
 
-File: ../lib/org-mode-poster-3.png Graphic file (type bmp)
-<../lib/org-mode-poster-3.png>
+
+(./_minted-org-mode-poster_poster/395FB582954644F85FFCD2BECF5D45D90585E3883F65C
+68776C96B292CE42B96.pygtex)
+File: emacs.png Graphic file (type bmp)
+<emacs.png>
 File: ../lib/org-mode-poster-4.png Graphic file (type bmp)
 <../lib/org-mode-poster-4.png>
 File: ../lib/org-mode-poster-4.png Graphic file (type bmp)
 <../lib/org-mode-poster-4.png>
-! Missing number, treated as zero.
-<to be read again> 
-                   \relax 
-l.111 \end{frame}
-                 
-A number should have been here; I inserted `0'.
-(If you can't figure out why I needed to see a number,
-look up `weird error' in the index to The TeXbook.)
-
-! Illegal unit of measure (pt inserted).
-<to be read again> 
-                   \relax 
-l.111 \end{frame}
-                 
-Dimensions can be in units of em, ex, in, pt, pc,
-cm, mm, dd, cc, bp, or sp; but yours is a new one!
-I'll assume that you meant to say pt, for printer's points.
-To recover gracefully from this error, it's best to
-delete the erroneous units; e.g., type `2' to delete
-two letters. (See Chapter 27 of The TeXbook.)
-
-
-! LaTeX Error: There's no line here to end.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.111 \end{frame}
-                 
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
+)
 File: ../lib/logo.pdf Graphic file (type pdf)
 <use ../lib/logo.pdf>
 File: ../lib/logo_feinstein.pdf Graphic file (type pdf)
@@ -1329,28 +1365,30 @@ Overfull \hbox (28.45274pt too wide) has occurred while \output is active
 [1
 
 ]
-\tf@nav=\write6
-\openout6 = `org-mode-poster_poster.nav'.
+\tf@nav=\write9
+\openout9 = `org-mode-poster_poster.nav'.
 
-\tf@toc=\write7
-\openout7 = `org-mode-poster_poster.toc'.
+\tf@toc=\write10
+\openout10 = `org-mode-poster_poster.toc'.
 
-\tf@snm=\write8
-\openout8 = `org-mode-poster_poster.snm'.
+\tf@snm=\write11
+\openout11 = `org-mode-poster_poster.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 112.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 112.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 171.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 171.
  (./org-mode-poster_poster.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 112.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 112.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 171.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 171.
+runsystem(rm org-mode-poster_poster.pyg)...executed.
+
  ) 
 Here is how much of TeX's memory you used:
- 23194 strings out of 494947
- 410533 string characters out of 6177099
- 499068 words of memory out of 5000000
- 26545 multiletter control sequences out of 15000+600000
- 13502 words of font info for 74 fonts, out of 8000000 for 9000
+ 26957 strings out of 494947
+ 483743 string characters out of 6177099
+ 623026 words of memory out of 5000000
+ 30209 multiletter control sequences out of 15000+600000
+ 13550 words of font info for 80 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 53i,21n,92p,812b,1549s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 53i,21n,92p,812b,1571s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on org-mode-poster_poster.pdf (1 page).

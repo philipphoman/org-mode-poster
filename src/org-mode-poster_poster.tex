@@ -1,4 +1,4 @@
-% Created 2018-04-02 Mon 04:55
+% Created 2018-04-02 Mon 13:40
 % Intended LaTeX compiler: pdflatex
 \documentclass[final]{beamer}
 	         \usetheme{ph}
@@ -14,7 +14,9 @@
 \graphicspath{{../output/figures/}{../lib/}}
 \usepackage[export]{adjustbox}
 \usepackage{graphicx,caption}
+\usepackage{minted}
 \usepackage{eurosym}
+\usepackage{listings}
 \usepackage{textcomp}
 \usepackage{bibentry}
 \date{}
@@ -24,67 +26,123 @@ Philipp Homan$^{1}$,
 \normalsize{$^{1}$Department of Psychiatry,}
 \normalsize{The Donald and Barbara Zucker}
 \normalsize{School of Medicine at Northwell/Hofstra,}
-\normalsize{Hempstead, NY}\\
+\normalsize{Hempstead, NY}
 }
 \usetheme{default}
-\date{2018-04-02 04:55}
+\date{2018-04-02 13:40}
 \title{A scientific poster entirely written in org-mode using GNU emacs and the beamer library}
 \begin{document}
 
-\begin{frame}[label={sec:org8f3d3e7}]{}
-\begin{columns}
-\begin{column}[t]{0.45\textwidth\columnwidth}
+\begin{frame}[fragile,label={sec:orgd2177c7}]{}
+ \begin{columns}
+\begin{column}[t]{0.45\columnwidth}
 \begin{block}{Background}
 \begin{itemize}
 \item Org-mode is not only useful for producing blog posts and even
-scientific manuscripts; it is also perfectly suitable to produce
-decent looking scientific posters.
+scientific manuscripts; it is also perfectly suitable to make 
+decent looking scientific posters
 \item We combine a relatively simple custom \LaTeX style file and common
 org-mode syntax
+\item The nice thing about org-mode is that we can populate the poster with
+code, graphs and numbers from inline code in languages such as R,
+python, Matlab and even shell scripting
+\item Inline code would look like this, which will produce a graph
+(Fig. \ref{fig:orgeb3e62b}):
 \end{itemize}
-\end{block}
 
-\begin{block}{Methods: Part 1}
-\captionsetup{justification=justified,width=.85\linewidth}
+\begin{columns}
+\begin{column}[T]{0.48\columnwidth}
+\begin{minted}[linenos=true]{r}
+x <- rnorm(100, 0, 1)
+hist(x, col="gray")
+\end{minted}
+
+
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.85\textwidth]{org-mode-poster-1.png}
-\caption{\label{fig:orga7530f0}
-\textbf{This could be a figure.}}
+\includegraphics[width=.9\linewidth]{3.png}
+\caption{\label{fig:orgeb3e62b}
+This is the output.}
 \end{figure}
+\end{column}
+\end{columns}
 \end{block}
 
-\begin{block}{Methods: Part 2}
-\captionsetup{justification=justified,width=.85\linewidth}
-\begin{figure}[htbp]
+\begin{block}{Methods: Inline code and tables}
+\begin{itemize}
+\item In addition to inline code, we can also produce tables
+\item Tables are very powerful in org-mode, they even include spreadsheet
+capabilities
+\item Some code to process the vector from above to make a table out of its
+summary could look like this, which would result in a little table
+(Table \ref{tab:org9ea6927}) :
+\end{itemize}
+
+\begin{columns}
+\begin{column}[T]{0.48\columnwidth}
+\begin{minted}[linenos=true]{r}
+m <- round(mean(x), 2)
+s <- round(sd(x), 2)
+data.frame(Mean=m, SD=s)
+\end{minted}
+
+\vspace{2cm}
+
+\begin{table}[htbp]
 \centering
-\includegraphics[width=0.85\textwidth]{org-mode-poster-2.png}
-\caption{\label{fig:org95c7011}
-\textbf{This could be another figure.}}
-\end{figure}
+\begin{tabular}{rr}
+Mean & SD\\
+\hline
+-0.06 & 0.95\\
+\end{tabular}
+\caption{\label{tab:org9ea6927}
+A table.}
+
+\end{table}
+\end{column}
+\end{columns}
 \end{block}
 \end{column}
 
-\begin{column}[t]{0.45\textwidth\columnwidth}
-\begin{block}{Results: Part 1}
-\captionsetup{justification=justified,width=.8\linewidth}
+
+
+\begin{column}[t]{0.45\columnwidth}
+\begin{block}{Results: graphics}
+\begin{itemize}
+\item Of course we can also include graphics
+\item Here, we use shell scripting to grab an image with curl from the
+internet (Fig. \ref{fig:orgfbcdbeb}):
+\end{itemize}
+
+\begin{columns}
+\begin{column}[T]{0.78\columnwidth}
+\small
+\begin{minted}[linenos=true]{sh}
+curl -0 https://www.gnu.org/software/emacs/images/emacs.png
+\end{minted}
+\normalsize
+
+\vspace{2cm}
+
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=0.8\textwidth]{org-mode-poster-3.png}
-\caption{\label{fig:org89b785d}
-\textbf{Another figure}}
+\includegraphics[page=9,width=0.2\textwidth]{emacs.png}
+\caption{\label{fig:orgfbcdbeb}
+This is the downloaded image.}
 \end{figure}
+\end{column}
+\end{columns}
 \end{block}
 
-\begin{block}{Results: Part 2}
+\begin{block}{Results: columns}
 \begin{columns}
 \begin{column}[T]{0.48\columnwidth}
 \captionsetup{justification=justified,width=.8\linewidth}
 \begin{figure}[htbp]
 \centering
 \includegraphics[page=3,width=0.9\textwidth]{org-mode-poster-4.png}
-\caption{\label{fig:org51482b3}
-\textbf{This is another figure}}
+\caption{\label{fig:org9ac2cf6}
+\textbf{This is the left figure of a two-column block}}
 \end{figure}
 \end{column}
 
@@ -93,8 +151,8 @@ org-mode syntax
 \begin{figure}[htbp]
 \centering
 \includegraphics[page=9,width=0.9\textwidth]{org-mode-poster-4.png}
-\caption{\label{fig:org2cc1106}
-\textbf{This is the right column of this box}}
+\caption{\label{fig:org558ce26}
+\textbf{This is the right figure.}}
 \end{figure}
 \end{column}
 \end{columns}
@@ -102,8 +160,9 @@ org-mode syntax
 
 \begin{block}{Conclusions}
 \begin{itemize}
-\item This example shows how incredibly versatile org-mode is. One can now
-produce scientific posters with a text editor (preferably emacs).
+\item This little example is meant to show how incredibly versatile
+org-mode is
+\item One can now produce scientific posters with a simple text editor
 \end{itemize}
 \end{block}
 \end{column}
