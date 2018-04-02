@@ -235,9 +235,9 @@ data.frame(Mean=m, SD=s)
 :BEAMER_opt: [T]
 :END:
 
-\small
+\footnotesize
 #+NAME: code3
-#+BEGIN_SRC sh :exports both :file emacs.png  
+#+BEGIN_SRC bash :exports both :file emacs.png  
 curl -0 https://www.gnu.org/software/emacs/images/emacs.png
 #+END_SRC
 \normalsize

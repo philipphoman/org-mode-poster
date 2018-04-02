@@ -1,4 +1,4 @@
-% Created 2018-04-02 Mon 13:45
+% Created 2018-04-02 Mon 15:24
 % Intended LaTeX compiler: pdflatex
 \documentclass[final]{beamer}
 	         \usetheme{ph}
@@ -29,11 +29,11 @@ Philipp Homan$^{1}$,
 \normalsize{Hempstead, NY}
 }
 \usetheme{default}
-\date{2018-04-02 13:45}
+\date{2018-04-02 15:24}
 \title{A scientific poster entirely written in org-mode using GNU emacs and the beamer library}
 \begin{document}
 
-\begin{frame}[fragile,label={sec:org999b905}]{}
+\begin{frame}[fragile,label={sec:orgbaeb4b8}]{}
  \begin{columns}
 \begin{column}[t]{0.45\columnwidth}
 \begin{block}{Background}
@@ -47,21 +47,21 @@ org-mode syntax
 code, graphs and numbers from inline code in languages such as R,
 python, Matlab and even shell scripting
 \item Inline code would look like this, which will produce a graph
-(Fig. \ref{fig:org6c554d6}):
+(Fig. \ref{fig:org8727911}):
 \end{itemize}
 
 \begin{columns}
 \begin{column}[T]{0.48\columnwidth}
-\begin{verbatim}
+\begin{minted}[linenos=true]{r}
 x <- rnorm(100, 0, 1)
 hist(x, col="gray")
-\end{verbatim}
+\end{minted}
 
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{3.png}
-\caption{\label{fig:org6c554d6}
+\caption{\label{fig:org8727911}
 This is the output.}
 \end{figure}
 \end{column}
@@ -75,16 +75,16 @@ This is the output.}
 capabilities
 \item Some code to process the vector from above to make a table out of its
 summary could look like this, which would result in a little table
-(Table \ref{tab:org6da192c}) :
+(Table \ref{tab:orga4b22ee}) :
 \end{itemize}
 
 \begin{columns}
 \begin{column}[T]{0.48\columnwidth}
-\begin{verbatim}
+\begin{minted}[linenos=true]{r}
 m <- round(mean(x), 2)
 s <- round(sd(x), 2)
 data.frame(Mean=m, SD=s)
-\end{verbatim}
+\end{minted}
 
 \vspace{2cm}
 
@@ -93,9 +93,9 @@ data.frame(Mean=m, SD=s)
 \begin{tabular}{rr}
 Mean & SD\\
 \hline
--0.01 & 0.98\\
+-0.11 & 0.92\\
 \end{tabular}
-\caption{\label{tab:org6da192c}
+\caption{\label{tab:orga4b22ee}
 A table.}
 
 \end{table}
@@ -111,15 +111,15 @@ A table.}
 \begin{itemize}
 \item Of course we can also include graphics
 \item Here, we use shell scripting to grab an image with curl from the
-internet (Fig. \ref{fig:orga357485}):
+internet (Fig. \ref{fig:orgb4430e3}):
 \end{itemize}
 
 \begin{columns}
 \begin{column}[T]{0.78\columnwidth}
-\small
-\begin{verbatim}
+\tiny
+\begin{minted}[linenos=true]{bash}
 curl -0 https://www.gnu.org/software/emacs/images/emacs.png
-\end{verbatim}
+\end{minted}
 \normalsize
 
 \vspace{2cm}
@@ -127,7 +127,7 @@ curl -0 https://www.gnu.org/software/emacs/images/emacs.png
 \begin{figure}[htbp]
 \centering
 \includegraphics[page=9,width=0.2\textwidth]{emacs.png}
-\caption{\label{fig:orga357485}
+\caption{\label{fig:orgb4430e3}
 This is the downloaded image.}
 \end{figure}
 \end{column}
@@ -141,7 +141,7 @@ This is the downloaded image.}
 \begin{figure}[htbp]
 \centering
 \includegraphics[page=3,width=0.9\textwidth]{org-mode-poster-4.png}
-\caption{\label{fig:org4edbed9}
+\caption{\label{fig:orgb45d477}
 \textbf{This is the left figure of a two-column block}}
 \end{figure}
 \end{column}
@@ -151,7 +151,7 @@ This is the downloaded image.}
 \begin{figure}[htbp]
 \centering
 \includegraphics[page=9,width=0.9\textwidth]{org-mode-poster-4.png}
-\caption{\label{fig:orge07faba}
+\caption{\label{fig:orgdcbb6b3}
 \textbf{This is the right figure.}}
 \end{figure}
 \end{column}
