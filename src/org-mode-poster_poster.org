@@ -36,6 +36,10 @@
 #+LATEX_HEADER: \usepackage{listings}
 #+LATEX_HEADER: \usepackage{textcomp}
 #+LATEX_HEADER: \usepackage{bibentry}
+#+LATEX_HEADER: \newcommand\sumin{\sum_{i=1}^{n}}
+#+LATEX_HEADER: \newcommand{\Xoi}[1]{#1(i)}
+#+LATEX_HEADER: \newcommand{\frakPQ}[2]{\frac{\Xoi{#1}}{\Xoi{#2}}}
+#+LATEX_HEADER: \newcommand{\DKLPQ}[3]{D_{\mathrm{KL}}(#1 #3 #2)}
 #+LATEX_HEADER: \date{}
 # ----------------------------------------------------------------------
 ** Authors and affiliations                                     :ignore:
@@ -133,7 +137,6 @@
 :BEGIN:
 :BEAMER_env: fullframe
 :END:
-
 ** Code                                                       :ignore:
 # Babel code can go here to populate the poster with dynamic output from
 # statistical calculations
@@ -178,7 +181,7 @@ hist(x, col="gray")
 #+CAPTION: This is the output.
 [[file:3.png]]
 
-*** Methods: Inline code and tables                            :B_block:
+*** Inline code and tables                            :B_block:
 :PROPERTIES:
 :BEAMER_env: block
 :END:
@@ -213,14 +216,12 @@ data.frame(Mean=m, SD=s)
 | -0.07 | 0.97 |
 |-------+------|
 
-
-
 ** Right column                                                 :BMCOL:
 :PROPERTIES:
 :BEAMER_col: 0.45
 :BEAMER_opt: [t]
 :END:
-*** Results: graphics                                          :B_block:
+*** Graphics                                                    :B_block:
 :PROPERTIES:
 :BEAMER_env: block
 :END:
@@ -250,7 +251,40 @@ curl -0 https://www.gnu.org/software/emacs/images/emacs.png
 #+RESULTS: code3
 [[file:emacs.png]]
 
-*** Results: columns                                           :B_block:
+*** Math                                                        :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+
+- We can easily include math: 
+
+**** Block
+:PROPERTIES:
+:BEAMER_col: 0.78
+:BEAMER_opt: [T]
+:END:
+
+The Kullback-Leibler (KL) divergence measures the difference between two
+probability distributions (i.e., the loss of information when one
+distribution is used to approximate another). The KL divergence is thus
+defined as
+
+\begin{align} 
+\label{eq:KL} 
+\DKLPQ{P}{Q}{\|} = \sumin \Xoi{P} \log \frakPQ{P}{Q}
+\end{align} 
+
+with $P$ and $Q$ being two probability distribution functions and $n$
+the number of sample points. Since $\DKLPQ{P}{Q}{\|}$ is not equal to
+$\DKLPQ{Q}{P}{\|}$, a symmetric variation of the KL divergence can be
+derived as follows:
+
+\begin{align} 
+\label{eq:KL2} 
+\DKLPQ{P}{Q}{,} = \sumin \Big(\Xoi{P} \log \frakPQ{P}{Q} + \Xoi{Q} \log \frakPQ{Q}{P} \Big).
+\end{align}
+
+*** Columns                                                     :B_block:
 :PROPERTIES:
 :BEAMER_env: block
 :END:
