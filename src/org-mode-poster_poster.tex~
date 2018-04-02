@@ -1,0 +1,112 @@
+% Created 2018-04-02 Mon 04:55
+% Intended LaTeX compiler: pdflatex
+\documentclass[final]{beamer}
+	         \usetheme{ph}
+           \usepackage[orientation=portrait,size=a0,scale=1.4]{beamerposter}
+           \usepackage[absolute,overlay]{textpos}
+	         \usepackage[authoryear]{natbib}
+
+
+\setlength{\paperwidth}{36in}
+\setlength{\paperheight}{48in}
+\setlength{\textwidth}{0.98\paperwidth}
+\setlength{\textheight}{0.98\paperheight}
+\graphicspath{{../output/figures/}{../lib/}}
+\usepackage[export]{adjustbox}
+\usepackage{graphicx,caption}
+\usepackage{eurosym}
+\usepackage{textcomp}
+\usepackage{bibentry}
+\date{}
+\author{
+Philipp Homan$^{1}$,
+\\
+\normalsize{$^{1}$Department of Psychiatry,}
+\normalsize{The Donald and Barbara Zucker}
+\normalsize{School of Medicine at Northwell/Hofstra,}
+\normalsize{Hempstead, NY}\\
+}
+\usetheme{default}
+\date{2018-04-02 04:55}
+\title{A scientific poster entirely written in org-mode using GNU emacs and the beamer library}
+\begin{document}
+
+\begin{frame}[label={sec:org1377f91}]{}
+\begin{columns}
+\begin{column}[t]{0.45\textwidth\columnwidth}
+\begin{block}{Background}
+\begin{itemize}
+\item Org-mode is not only useful for producing blog posts and even
+scientific manuscripts; it is also perfectly suitable to produce
+decent looking scientific posters.
+\item We combine a relatively simple custom \LaTeX style file and common
+org-mode syntax
+\end{itemize}
+\end{block}
+
+\begin{block}{Methods: Part 1}
+\captionsetup{justification=justified,width=.85\linewidth}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{org-mode-poster-1.png}
+\caption{\label{fig:orgb1905be}
+\textbf{This could be a figure.}}
+\end{figure}
+\end{block}
+
+\begin{block}{Methods: Part 2}
+\captionsetup{justification=justified,width=.85\linewidth}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.85\textwidth]{org-mode-poster-2.png}
+\caption{\label{fig:org66f9b35}
+\textbf{This could be another figure.}}
+\end{figure}
+\end{block}
+\end{column}
+
+\begin{column}[t]{0.45\textwidth\columnwidth}
+\begin{block}{Results: Part 1}
+\captionsetup{justification=justified,width=.8\linewidth}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.8\textwidth]{org-mode-poster-3.png}
+\caption{\label{fig:org4dea716}
+\textbf{Another figure}}
+\end{figure}
+\end{block}
+
+\begin{block}{Results: Part 2}
+\begin{columns}
+\begin{column}[T]{0.48\columnwidth}
+\captionsetup{justification=justified,width=.8\linewidth}
+\begin{figure}[htbp]
+\centering
+\includegraphics[page=3,width=0.9\textwidth]{org-mode-poster-4.png}
+\caption{\label{fig:orgca84fda}
+\textbf{This is another figure}}
+\end{figure}
+\end{column}
+
+\begin{column}[T]{0.48\columnwidth}
+\captionsetup{justification=justified,width=.8\linewidth}
+\begin{figure}[htbp]
+\centering
+\includegraphics[page=9,width=0.9\textwidth]{org-mode-poster-5.png}
+\caption{\label{fig:orgc005403}
+\textbf{This is the right column of this box}}
+\end{figure}
+\end{column}
+\end{columns}
+\end{block}
+
+\begin{block}{Conclusions}
+\begin{itemize}
+\item This example shows how incredibly versatile org-mode is. One can now
+produce scientific posters with a text editor (preferably emacs).
+\end{itemize}
+\end{block}
+\end{column}
+\end{columns}
+\end{frame}
+\end{document}

@@ -1,0 +1,175 @@
+%--------------------------------------------------------------------------------
+% This style was created by Philipp Homan
+% (Adaption from Rob J Hyndman and David Vilar)
+% 4/1/18
+%--------------------------------------------------------------------------------
+\ProvidesPackage{beamerthemeph}
+\selectcolormodel{cmyk}
+\mode<presentation>
+%--------------------------------------------------------------------------------
+
+
+%--------------------------------------------------------------------------------
+% custom colors
+%--------------------------------------------------------------------------------
+\definecolor{i6blue}{cmyk}{1,0.305,0,0.06}
+\definecolor{i6bluedark}{rgb}{0.0156,0.2578,0.5625} 
+\definecolor{i6colorscheme1}{HTML}{FF6518}  % e.g. for block title
+%\definecolor{i6colorscheme1}{HTML}{FFFFFF}  % e.g. for block title
+%\definecolor{i6colorblockbg}{HTML}{0033cc}
+%\definecolor{i6colorblockfg}{HTML}{FFFFFF}
+\definecolor{i6colorblockfg}{HTML}{FCE94F}
+%\definecolor{i6colorblockfg}{HTML}{0033cc}
+\definecolor{i6colorblockbg}{HTML}{0033CC}
+%\definecolor{i6colorblockbg}{HTML}{C3DFFF}
+\definecolor{i6colorscheme2}{HTML}{000000}  % e.g. title in headline
+\definecolor{i6colorscheme3}{HTML}{C3DFFF}  % e.g. for poster background
+%\definecolor{i6colorscheme3}{HTML}{0033CC}  % e.g. for poster background
+\definecolor{i6colorscheme5}{HTML}{FFFFFF}  % e.g. for poster background
+\definecolor{i6colorscheme4}{HTML}{000000} 
+\definecolor{i6colorschemeHeadline}{HTML}{0033cc}  % for headline bg
+%\definecolor{i6colorschemeHeadline}{HTML}{FFFFFF}  % for headline bg
+%\definecolor{i6colorschemeFootline}{HTML}{100D09}  % for headline bg
+
+%--------------------------------------------------------------------------------
+% headline colors and fonts
+%--------------------------------------------------------------------------------
+\setbeamercolor{headline}{fg=white,bg=i6colorschemeHeadline}
+\setbeamercolor{title in headline}{fg=white}
+\setbeamercolor{logo}{bg=white}
+%\setbeamercolor{title in headline}{fg=blue}
+%\setbeamercolor{author in headline}{fg=lightgray}
+\setbeamercolor{author in headline}{fg=i6colorscheme3}
+\setbeamercolor{institute in headline}{fg=lightgray}
+\setbeamercolor{logo in headline}{fg=black,bg=lightgray}
+\setbeamercolor{separation line}{bg=i6colorscheme1}
+
+%--------------------------------------------------------------------------------
+% footline colors and fonts
+%--------------------------------------------------------------------------------
+\setbeamercolor{footline}{fg=white,bg=i6colorschemeHeadline}
+\setbeamerfont{footline}{fg=white, size=\normalsize}
+
+%--------------------------------------------------------------------------------
+% body colors and fonts
+%--------------------------------------------------------------------------------
+\setbeamercolor*{normal text}{fg=black,bg=i6colorscheme3}
+
+%--------------------------------------------------------------------------------
+% block environment
+%--------------------------------------------------------------------------------
+\setbeamercolor*{block body}{bg=i6colorscheme5,fg=black}
+\setbeamerfont{block body}{size=\large}
+\setbeamercolor*{block title}{fg=i6colorblockfg,bg=i6colorblockbg}
+\setbeamerfont{block title}{size=\Large,series=\bf}
+
+%--------------------------------------------------------------------------------
+% example environment
+%--------------------------------------------------------------------------------
+\setbeamercolor*{example title}{fg=white,bg=i6colorscheme1}
+\setbeamerfont{example title}{size=\large,series=\bf,bg=i6colorscheme1,fg=white}
+
+\setbeamercolor{alerted text}{fg=i6colorscheme1}
+
+\setbeamertemplate{itemize items}[circle]
+\setbeamertemplate{navigation symbols}{}  % no navigation on a poster
+
+%--------------------------------------------------------------------------------
+% caption
+%--------------------------------------------------------------------------------
+\setbeamerfont{caption name}{series=\bfseries,size={\small}}
+\setbeamerfont{caption}{size={\small}}
+\setbeamercolor{caption name}{fg=black}
+
+%--------------------------------------------------------------------------------
+% block
+%--------------------------------------------------------------------------------
+\setbeamertemplate{block begin}{
+  \vskip.75ex
+  \begin{beamercolorbox}[leftskip=1cm,colsep*=.75ex]{block title}%
+    \usebeamerfont*{block title}\Large\insertblocktitle
+  \end{beamercolorbox}%
+  {\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}%
+  \usebeamerfont{block body}%
+  \begin{beamercolorbox}[colsep*=.75ex,sep=.75ex,vmode]{block body}%
+    \ifbeamercolorempty[bg]{block body}{\vskip-.25ex}{\vskip-.75ex}\vbox{}%
+  }
+  \setbeamertemplate{block end}{
+  \end{beamercolorbox}
+}
+%--------------------------------------------------------------------------------
+
+%--------------------------------------------------------------------------------
+% headline
+%--------------------------------------------------------------------------------
+\setbeamertemplate{headline}{  
+  \leavevmode
+  \begin{columns}[t,onlytextwidth]
+	\column{.87\textwidth}
+	  \begin{beamercolorbox}[wd=\columnwidth, leftskip=2.0cm]{headline}
+%  	\vskip1.5cm
+%		\centering
+     \vskip7.6ex
+
+    \usebeamercolor{title in headline}{\color{fg}\textbf{\huge{\inserttitle}}\\[1ex]}
+     \usebeamercolor{author in headline}{\color{fg}\large{\insertauthor}\\[1ex]}
+     \vskip2.4ex
+	  \end{beamercolorbox}
+	\column{.13\textwidth}
+	   \begin{beamercolorbox}[wd=\columnwidth]{logo}
+    \centering
+		\vskip1.9cm
+		\includegraphics[width=0.8\linewidth]{logo.pdf}
+		\vskip1.9cm
+	   \end{beamercolorbox}
+  \end{columns}
+  %\begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
+  %  \rule{0pt}{2pt}
+  %\end{beamercolorbox}
+  %\begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
+  %  \rule{0pt}{2pt}
+  %\end{beamercolorbox}
+
+
+}
+%--------------------------------------------------------------------------------
+
+
+%--------------------------------------------------------------------------------
+% Footer
+%--------------------------------------------------------------------------------
+\setbeamertemplate{footline}{
+  %\begin{beamercolorbox}[wd=\paperwidth]{upper separation line foot}
+  %  \rule{0pt}{2pt}
+  %\end{beamercolorbox}
+
+  \begin{columns}[b,onlytextwidth]
+	\column{.35\textwidth}
+	   \begin{beamercolorbox}[leftskip=-0.5cm,wd=\columnwidth]{logo}
+    \vskip3.25ex
+    \includegraphics[width=0.9\textwidth,right]{logo_feinstein.pdf}
+    \vskip1.6ex
+	   \end{beamercolorbox}
+	\column{.65\textwidth}
+	  \begin{beamercolorbox}[leftskip=1cm,wd=\columnwidth]{headline}
+    %\hfill \raisebox{-0.4cm}{\insertfooter}
+    \vskip1.5ex
+    %\insertfooter
+    \includegraphics[width=0.65\textwidth,left]{twittergithub.pdf}
+    \vskip1.5ex
+	  %\begin{beamercolorbox}[wd=\columnwidth]{logo}
+	  \end{beamercolorbox}
+  \end{columns}
+  %\begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
+  %  \rule{0pt}{2pt}
+  %\end{beamercolorbox}
+  %\begin{beamercolorbox}[wd=\paperwidth]{lower separation line head}
+  %  \rule{0pt}{2pt}
+  %\end{beamercolorbox}
+
+
+}
+%--------------------------------------------------------------------------------
+\mode<all>
+\setbeamertemplate{caption}[numbered]
+\def\footer#1{\def\insertfooter{#1}}

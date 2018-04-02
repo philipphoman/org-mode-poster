@@ -1,0 +1,223 @@
+#+startup: beamer
+#+TITLE: A scientific poster entirely written in org-mode 
+#+TITLE: using GNU emacs and the beamer library
+* Preamble                                                    :ignore:
+** General comments                                           :ignore:
+# ----------------------------------------------------------------------
+# - Turn on synonyms by starting synosaurus-mode
+# - Look up words using C-c sr
+# - Turn on dictionary by starting flyspell-mode
+# - Count words by section using org-wc-display
+# ----------------------------------------------------------------------
+** Specific comments for this manuscript                       :ignore:
+# ----------------------------------------------------------------------
+** org specific settings                                        :ignore:
+# ----------------------------------------------------------------------
+#+OPTIONS: email:nil toc:nil num:nil author:nil date:t tex:t title:nil
+#+STARTUP: align fold
+#+SEQ_TODO: TODO(t) | DONE(d)
+#+TAGS: figure(f) check(c) noexport(n) ignore(i)
+#+LANGUAGE: en
+#+EXCLUDE_TAGS: noexport TODO
+#+DATE: {{{time(%Y-%m-%d %H:%M)}}}
+# ----------------------------------------------------------------------
+** Latex header                                                 :ignore:
+# ----------------------------------------------------------------------
+#+LATEX_CLASS:  mybeamerposter
+#+LATEX_HEADER:  \setlength{\paperwidth}{36in}
+#+LATEX_HEADER:  \setlength{\paperheight}{48in}
+#+LATEX_HEADER: \setlength{\textwidth}{0.98\paperwidth}
+#+LATEX_HEADER: \setlength{\textheight}{0.98\paperheight}
+#+LATEX_HEADER: \graphicspath{{../output/figures/}{../lib/}}
+#+LATEX_HEADER: \usepackage[export]{adjustbox}
+#+LATEX_HEADER: \usepackage{graphicx,caption}
+#+LATEX_HEADER: \usepackage{eurosym}
+#+LATEX_HEADER: \usepackage{textcomp}
+#+LATEX_HEADER: \usepackage{bibentry}
+#+LATEX_HEADER: \date{}
+# ----------------------------------------------------------------------
+** Authors and affiliations                                     :ignore:
+# ----------------------------------------------------------------------
+#+LATEX_HEADER: \author{
+#+LATEX_HEADER: Philipp Homan$^{1}$, 
+#+LATEX_HEADER: \\
+#+LATEX_HEADER: \normalsize{$^{1}$Department of Psychiatry,} 
+#+LATEX_HEADER: \normalsize{The Donald and Barbara Zucker}
+#+LATEX_HEADER: \normalsize{School of Medicine at Northwell/Hofstra,}
+#+LATEX_HEADER: \normalsize{Hempstead, NY}\\
+#+LATEX_HEADER: }
+# ----------------------------------------------------------------------
+** Buffer-wide source code blocks                               :ignore:
+# ----------------------------------------------------------------------
+# Set elisp variables need for nice formatting We want no new lines in
+# inline results and a paragraph size of 80 characters Important: this
+# has to be evaluated witch C-c C-c in order to work in the current
+# buffer
+#+BEGIN_SRC emacs-lisp :exports none :results silent
+
+  ; set timestamp format
+  ;(setq org-export-date-timestamp-format "%FT%T%z")
+  (require 'org-wc)
+  (flyspell-mode t)
+  ;(evil-declare-change-repeat 'company-complete)
+  (setq synosaurus-choose-method 'popup)
+	(synosaurus-mode t)
+	(auto-complete-mode t)
+  ;(ac-config-default)
+  ;(add-to-list 'ac-modes 'org-mode)
+	(linum-mode t)
+  (whitespace-mode t)
+  (setq org-babel-inline-result-wrap "%s")
+	(setq org-export-with-broken-links "mark")
+  (setq fill-column 72)
+  (setq whitespace-line-column 72)
+	;(setq org-latex-caption-above '(table image))
+	(setq org-latex-caption-above nil)
+	(org-toggle-link-display)
+	; don't remove logfiles at export
+  (setq org-latex-remove-logfiles nil)
+	
+  ; Keybindings
+  ; (global-set-key (kbd "<f7> c") "#+CAPTION: ")
+  (defun setfillcolumn72 ()
+	   (interactive)
+     (setq fill-column 72)
+		 )
+
+  (defun setfillcolumn42 ()
+	   (interactive)
+     (setq fill-column 42)
+   )
+  (define-key org-mode-map (kbd "C-c c #") "#+CAPTION: ")
+  (define-key org-mode-map (kbd "C-c l #") "#+LATEX_HEADER: ")
+  (define-key org-mode-map (kbd "C-c f c 4 2") 'setfillcolumn42)
+  (define-key org-mode-map (kbd "C-c f c 7 2") 'setfillcolumn72)
+	
+  (setq org-odt-category-map-alist
+      '(("__Figure__" "*Figure*" "value" "Figure" org-odt--enumerable-image-p)))
+ 
+
+	; let ess not ask for starting directory
+  (setq ess-ask-for-ess-directory nil)
+
+  ;(setq org-latex-pdf-process '("latexmk -pdflatex='xelatex
+  ;-output-directory=../output/tex/ -interaction nonstopmode' -pdf
+  ;-bibtex -f %f"))
+  (setq org-latex-logfiles-extensions 
+      (quote("bcf" "blg" "fdb_latexmk" "fls" 
+      "figlist" "idx" "log" "nav" "out" "ptc" 
+      "run.xml" "snm" "toc" "vrb" "xdv")))
+
+  ; deactivate link resolving
+  (setq org-activate-links nil)
+
+
+#+END_SRC
+#
+#
+#
+# ----------------------------------------------------------------------
+** End preamble                                                 :ignore:
+# ----------------------------------------------------------------------
+
+* The poster
+:PROPERTIES:
+:BEGIN:
+:BEAMER_env: fullframe
+:END:
+
+** Code                                                       :ignore:
+# Babel code can go here to populate the poster with dynamic output from
+# statistical calculations
+
+** Left column                                                  :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.45\textwidth
+:BEAMER_opt: [t]
+:END:
+*** Background                                                 :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+- Org-mode is not only useful for producing blog posts and even
+  scientific manuscripts; it is also perfectly suitable to produce
+  decent looking scientific posters.
+- We combine a relatively simple custom \LaTeX style file and common
+  org-mode syntax
+
+*** Methods: Part 1                                                 :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+
+\captionsetup{justification=justified,width=.85\linewidth}
+#+NAME: figflowchart
+#+CAPTION: *This could be a figure.*
+#+ATTR_LATEX: :width 0.85\textwidth 
+[[file:org-mode-poster-1.png]]
+
+*** Methods: Part 2                                                 :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+
+\captionsetup{justification=justified,width=.85\linewidth}
+#+NAME: figshrinkage
+#+CAPTION: *This could be another figure.* 
+#+ATTR_LATEX: :width 0.85\textwidth
+[[file:org-mode-poster-2.png]]
+
+** Right column                                                 :BMCOL:
+:PROPERTIES:
+:BEAMER_col: 0.45\textwidth
+:BEAMER_opt: [t]
+:END:
+*** Results: Part 1                                                 :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+
+
+\captionsetup{justification=justified,width=.8\linewidth}
+#+NAME: figplsbrains
+#+CAPTION: *Another figure* 
+#+ATTR_LATEX: :width 0.8\textwidth
+[[file:org-mode-poster-3.png]]
+
+*** Results: Part 2                                                 :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+
+**** Left
+:PROPERTIES:
+:BEAMER_col: 0.48
+:BEAMER_opt: [T]
+:END:
+
+\captionsetup{justification=justified,width=.8\linewidth}
+#+NAME: figge
+#+CAPTION: *This is another figure*
+#+ATTR_LATEX: :width 0.9\textwidth :options page=3
+[[file:org-mode-poster-4.png]]
+
+**** Right
+:PROPERTIES:
+:BEAMER_col: 0.48
+:BEAMER_opt: [T]
+:END:
+
+\captionsetup{justification=justified,width=.8\linewidth}
+#+NAME: figclus
+#+CAPTION: *This is the right column of this box*
+#+ATTR_LATEX: :width 0.9\textwidth :options page=9
+[[file:org-mode-poster-4.png]]
+
+*** Conclusions                                                :B_block:
+:PROPERTIES:
+:BEAMER_env: block
+:END:
+- This example shows how incredibly versatile org-mode is. One can now
+  produce scientific posters with a text editor (preferably emacs).
+
+	
