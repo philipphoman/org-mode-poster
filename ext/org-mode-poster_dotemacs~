@@ -1,0 +1,163 @@
+;; This is the .emacs configuration file
+;; Large parts of this have been copied from other people
+;; PH, 12/1/16
+;;----------------------------------------------------------------------
+;; Global
+;;----------------------------------------------------------------------
+;; get rid of yes or no
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; package archives
+(require 'package)
+(add-to-list 'package-archives 
+	     '("org" . "http://orgmode.org/elpa/"))
+(add-to-list 'package-archives 
+	     '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives 
+	     '("melpa-stable" . "http://stable.melpa.org/packages/"))
+(setq package-enable-at-startup nil)
+(package-initialize)
+
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(setq use-package-verbose t)
+(setq use-package-always-ensure t)
+
+(eval-when-compile (require 'use-package))
+(setq default-fill-column 72)
+
+;; Tell emacs where is your personal elisp lib dir
+;(add-to-list 'load-path "~/.emacs.d/lisp/")
+
+;(add-to-list 'load-path "~/.emacs.d/lisp/")
+;; keyboard binding to replace M-x
+(global-set-key "\C-x\C-m" 'execute-extended-command)
+(global-set-key "\C-c\C-m" 'execute-extended-command)
+;;----------------------------------------------------------------------
+;; org mode 
+;;----------------------------------------------------------------------
+;; remove comments from org document for use with export hook
+;; https://emacs.stackexchange.com/questions/22574/orgmode-export-how-to-prevent-a-new-line-for-comment-lines
+(defun delete-org-comments (backend)
+(loop for comment in (reverse (org-element-map 
+                       (org-element-parse-buffer)
+                  'comment 'identity))
+  do
+  (setf (buffer-substring (org-element-property :begin comment)
+              (org-element-property :end comment))
+        "")))
+
+;; add to export hook
+(add-hook 'org-export-before-processing-hook 'delete-org-comments)
+;;----------------------------------------------------------------------
+;; ess
+;;----------------------------------------------------------------------
+(require 'ess)
+(require 'ess-site)
+(setq tab-width 2)
+;(whitespace-mode t)
+
+; let ess not ask for starting directory
+(setq ess-ask-for-ess-directory nil)
+; disable auto complete (takes too long)
+(setq ess-use-auto-complete nil)
+
+;(linum-mode t)
+(add-hook 'ess-mode-hook 
+  (lambda () 
+    (whitespace-mode t)
+    (linum-mode t)
+    ; if you uncomment this and reload .emacs from within an R buffer,
+    ; it should work as a hack
+    (setq ess-indent-with-fancy-comments nil)
+    (setq ess-style nil)))
+;;----------------------------------------------------------------------
+;; Org
+;;----------------------------------------------------------------------
+(require 'org)
+(require 'org-element)
+
+;; window setup
+(setq org-agenda-restore-windows-after-quit t)
+(setq org-agenda-skip-scheduled-if-done t)
+
+;; use ox-extra to ignore certain headings
+(require 'ox-extra)
+(ox-extras-activate '(ignore-headlines))
+
+;; disable indenting
+(require 'org-indent)
+(org-indent-mode -1)
+
+;; we don't want raw inline calls to include a newline
+;;(setq org-babel-inline-result-wrap "well, %s")
+
+;; indentation
+(defun my-tab-related-stuff ()
+;   (setq indent-tabs-mode t)
+;   (setq tab-stop-list (number-sequence 4 200 4))
+;   (setq default-tab-width 2)
+   (setq tab-width 2))
+;   (setq indent-line-function 'insert-tab))
+(add-hook 'org-mode-hook 'my-tab-related-stuff)
+
+;; inline results wrapping
+(setq org-babel-inline-result-wrap "%s")
+
+;; active Babel languages
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((R . t)
+   (latex . t)
+   (dot . t)
+   (shell . t)
+   (ditaa . t)
+   ))
+
+;; we trust our own R code so we do not need to confirm
+(defun my-org-confirm-babel-evaluate (lang body)
+  (not (string-match "[Rlatexdotditaashell]" lang )))  ; don't ask for R
+(setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
+
+(require 'ox-latex)
+;;; XeLaTeX customisations
+;; remove "inputenc" from default packages as it clashes with xelatex
+(setf org-latex-default-packages-alist
+  (remove '("AUTO" "inputenc" t) org-latex-default-packages-alist))
+
+;(setq org-latex-pdf-process '("latexmk -pdf 
+;	-pdflatex='xelatex -shell-escape -interaction nonstopmode' -bibtex -f %f "))
+  (setq org-latex-pdf-process
+  '("latexmk -pdflatex='xelatex -interaction nonstopmode' -pdf -bibtex -f %f"))
+
+
+;; avoid hypersetup
+(setq org-latex-with-hyperref nil)
+
+;; latex templates
+;\\usepackage[authoryear]{natbib}
+(add-to-list 'org-latex-classes
+        '("myarticle"
+          "\\documentclass[12pt]{article} 
+           \\usepackage[labelfont=bf]{caption}
+           \\usepackage{times}
+           [NO-DEFAULT-PACKAGES]"
+          ("\\section{%s}" . "\\section*{%s}")
+          ("\\subsection{%s}" . "\\subsection*{%s}")       
+          ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+          ("\\paragraph{%s}" . "\\paragraph*{%s}")
+          ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
+;;----------------------------------------------------------------------
+;; bibtex
+;;----------------------------------------------------------------------
+(require 'bibtex)
+(require 'org-ref)
+(require 'org-ref-pubmed)
+(require 'org-ref-wos)
+(require 'org-ref-scopus)
+(setq reftex-default-bibliography '("master.bib"))
+(setq org-ref-default-bibliography '("master.bib"))
+
