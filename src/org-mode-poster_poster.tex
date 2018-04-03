@@ -1,4 +1,4 @@
-% Created 2018-04-02 Mon 18:38
+% Created 2018-04-02 Mon 19:58
 % Intended LaTeX compiler: pdflatex
 \documentclass[final]{beamer}
 	         \usetheme{ph}
@@ -33,11 +33,11 @@ Philipp Homan$^{1}$,
 \normalsize{Hempstead, NY}
 }
 \usetheme{default}
-\date{2018-04-02 18:38}
-\title{A scientific poster entirely written in org-mode using GNU emacs and the beamer library}
+\date{2018-04-02 19:58}
+\title{Using org-mode to produce scientific posters}
 \begin{document}
 
-\begin{frame}[fragile,label={sec:org727f6f5}]{}
+\begin{frame}[fragile,label={sec:org10a116a}]{}
  \begin{columns}
 \begin{column}[t]{0.45\columnwidth}
 \begin{block}{Background}
@@ -51,21 +51,23 @@ org-mode syntax
 code, graphs and numbers from inline code in languages such as R,
 python, Matlab and even shell scripting
 \item Inline code would look like this, which will produce a graph
-(Fig. \ref{fig:orgaca79ae}):
+(Fig. \ref{fig:org8cce396}):
 \end{itemize}
 
 \begin{columns}
 \begin{column}[T]{0.48\columnwidth}
 \begin{minted}[linenos=true]{r}
-x <- rnorm(100, 0, 1)
-hist(x, col="gray")
+set.seed(20180402)
+x1 <- rnorm(100, 0, 1)
+x2 <- rnorm(100, 0.5, 1)
+hist(x1, col="red")
+hist(x2, col="blue", add=TRUE)
 \end{minted}
-
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{3.png}
-\caption{\label{fig:orgaca79ae}
+\caption{\label{fig:org8cce396}
 This is the output.}
 \end{figure}
 \end{column}
@@ -77,30 +79,38 @@ This is the output.}
 \item In addition to inline code, we can also produce tables
 \item Tables are very powerful in org-mode, they even include spreadsheet
 capabilities
-\item Some code to process the vector from above to make a table out of its
-summary could look like this, which would result in a little table
-(Table \ref{tab:org6921627}) :
+\item Some code to process the first vector from above to make a table out
+of its summary could look like this, which would result in a little
+table (Table \ref{tab:orgfdd29a9}) :
 \end{itemize}
 
 \begin{columns}
-\begin{column}[T]{0.48\columnwidth}
+\begin{column}[T]{0.88\columnwidth}
 \begin{minted}[linenos=true]{r}
-m <- round(mean(x), 2)
-s <- round(sd(x), 2)
-data.frame(Mean=m, SD=s)
+library(broom)
+library(dplyr)
+t1 <- tidy(round(summary(x1), 2)) 
+t2 <- tidy(round(summary(x2), 2))
+
+# This will export as a table
+rbind(t1, t2) %>%
+mutate(name=c("x1", "x2"))
 \end{minted}
 
 \vspace{2cm}
 
 \begin{table}[htbp]
 \centering
-\begin{tabular}{rr}
-Mean & SD\\
+\begin{tabular}{rrrrrrl}
 \hline
-0.07 & 0.98\\
+minimum & q1 & median & mean & q3 & maximum & name\\
+\hline
+-2.29 & -0.49 & 0.11 & 0.14 & 0.8 & 2.47 & x1\\
+-2.17 & -0.45 & 0.07 & 0.13 & 0.85 & 2.23 & x2\\
+\hline
 \end{tabular}
-\caption{\label{tab:org6921627}
-A table.}
+\caption{\label{tab:orgfdd29a9}
+A table summarizing the two distributions.}
 
 \end{table}
 \end{column}
@@ -111,15 +121,15 @@ A table.}
 \begin{column}[t]{0.45\columnwidth}
 \begin{block}{Graphics}
 \begin{itemize}
-\item Of course we can also include graphics
-\item Here, we use shell scripting to grab an image with curl from the
-internet (Fig. \ref{fig:orgf35b3ea}):
+\item We can use shell scripting to grab an image with curl from the
+internet (Fig. \ref{fig:orga373a15}):
 \end{itemize}
 
 \begin{columns}
 \begin{column}[T]{0.78\columnwidth}
 \footnotesize
 \begin{minted}[linenos=true]{bash}
+# Download emacs icon from gnu.org
 curl -0 https://www.gnu.org/software/emacs/images/emacs.png
 \end{minted}
 \normalsize
@@ -129,7 +139,7 @@ curl -0 https://www.gnu.org/software/emacs/images/emacs.png
 \begin{figure}[htbp]
 \centering
 \includegraphics[page=9,width=0.2\textwidth]{emacs.png}
-\caption{\label{fig:orgf35b3ea}
+\caption{\label{fig:orga373a15}
 This is the downloaded image.}
 \end{figure}
 \end{column}
@@ -138,7 +148,9 @@ This is the downloaded image.}
 
 \begin{block}{Math}
 \begin{itemize}
-\item We can easily include math:
+\item We can easily include math
+\item For example, let's describe how to compute the distance between the
+two simulated distributions \(x1\) and \(x2\) from before:
 \end{itemize}
 
 \begin{columns}
@@ -169,22 +181,22 @@ derived as follows:
 \begin{block}{Columns}
 \begin{columns}
 \begin{column}[T]{0.48\columnwidth}
-\captionsetup{justification=justified,width=.8\linewidth}
+\captionsetup{justification=justified,width=.85\linewidth}
 \begin{figure}[htbp]
 \centering
-\includegraphics[page=3,width=0.9\textwidth]{org-mode-poster-4.png}
-\caption{\label{fig:org623938b}
-\textbf{This is the left figure of a two-column block}}
+\includegraphics[width=.9\linewidth]{4l.png}
+\caption{\label{fig:orgf47550b}
+This is the left figure of a two-column block, showing the density of \(x1\).}
 \end{figure}
 \end{column}
 
 \begin{column}[T]{0.48\columnwidth}
-\captionsetup{justification=justified,width=.8\linewidth}
+\captionsetup{justification=justified,width=.85\linewidth}
 \begin{figure}[htbp]
 \centering
-\includegraphics[page=9,width=0.9\textwidth]{org-mode-poster-4.png}
-\caption{\label{fig:orgb76a1ef}
-\textbf{This is the right figure.}}
+\includegraphics[width=.9\linewidth]{4r.png}
+\caption{\label{fig:org96112b0}
+This is the right figure. It shows the density of \(x2\).}
 \end{figure}
 \end{column}
 \end{columns}
@@ -194,7 +206,7 @@ derived as follows:
 \begin{itemize}
 \item This little example is meant to show how incredibly versatile
 org-mode is
-\item One can now produce scientific posters with a simple text editor
+\item Scientific posters can be produced with a simple text editor
 \end{itemize}
 \end{block}
 \end{column}
