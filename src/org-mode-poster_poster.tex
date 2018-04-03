@@ -1,4 +1,4 @@
-% Created 2018-04-02 Mon 19:58
+% Created 2018-04-02 Mon 22:17
 % Intended LaTeX compiler: pdflatex
 \documentclass[final]{beamer}
 	         \usetheme{ph}
@@ -33,11 +33,11 @@ Philipp Homan$^{1}$,
 \normalsize{Hempstead, NY}
 }
 \usetheme{default}
-\date{2018-04-02 19:58}
+\date{2018-04-02 22:17}
 \title{Using org-mode to produce scientific posters}
 \begin{document}
 
-\begin{frame}[fragile,label={sec:org10a116a}]{}
+\begin{frame}[fragile,label={sec:orgec21ff0}]{}
  \begin{columns}
 \begin{column}[t]{0.45\columnwidth}
 \begin{block}{Background}
@@ -51,12 +51,12 @@ org-mode syntax
 code, graphs and numbers from inline code in languages such as R,
 python, Matlab and even shell scripting
 \item Inline code would look like this, which will produce a graph
-(Fig. \ref{fig:org8cce396}):
+(Fig. \ref{fig:org498cf2b}):
 \end{itemize}
 
 \begin{columns}
-\begin{column}[T]{0.48\columnwidth}
-\begin{minted}[linenos=true]{r}
+\begin{column}[T]{0.68\columnwidth}
+\begin{minted}[linenos=true,bgcolor=lightgray]{r}
 set.seed(20180402)
 x1 <- rnorm(100, 0, 1)
 x2 <- rnorm(100, 0.5, 1)
@@ -67,7 +67,7 @@ hist(x2, col="blue", add=TRUE)
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{3.png}
-\caption{\label{fig:org8cce396}
+\caption{\label{fig:org498cf2b}
 This is the output.}
 \end{figure}
 \end{column}
@@ -81,12 +81,12 @@ This is the output.}
 capabilities
 \item Some code to process the first vector from above to make a table out
 of its summary could look like this, which would result in a little
-table (Table \ref{tab:orgfdd29a9}) :
+table (Table \ref{tab:org80b4f16}) :
 \end{itemize}
 
 \begin{columns}
-\begin{column}[T]{0.88\columnwidth}
-\begin{minted}[linenos=true]{r}
+\begin{column}[T]{0.78\columnwidth}
+\begin{minted}[linenos=true,bgcolor=lightgray]{r}
 library(broom)
 library(dplyr)
 t1 <- tidy(round(summary(x1), 2)) 
@@ -109,7 +109,7 @@ minimum & q1 & median & mean & q3 & maximum & name\\
 -2.17 & -0.45 & 0.07 & 0.13 & 0.85 & 2.23 & x2\\
 \hline
 \end{tabular}
-\caption{\label{tab:orgfdd29a9}
+\caption{\label{tab:org80b4f16}
 A table summarizing the two distributions.}
 
 \end{table}
@@ -122,13 +122,13 @@ A table summarizing the two distributions.}
 \begin{block}{Graphics}
 \begin{itemize}
 \item We can use shell scripting to grab an image with curl from the
-internet (Fig. \ref{fig:orga373a15}):
+internet (Fig. \ref{fig:orge0395cc}):
 \end{itemize}
 
 \begin{columns}
 \begin{column}[T]{0.78\columnwidth}
 \footnotesize
-\begin{minted}[linenos=true]{bash}
+\begin{minted}[linenos=true,bgcolor=lightgray]{bash}
 # Download emacs icon from gnu.org
 curl -0 https://www.gnu.org/software/emacs/images/emacs.png
 \end{minted}
@@ -139,7 +139,7 @@ curl -0 https://www.gnu.org/software/emacs/images/emacs.png
 \begin{figure}[htbp]
 \centering
 \includegraphics[page=9,width=0.2\textwidth]{emacs.png}
-\caption{\label{fig:orga373a15}
+\caption{\label{fig:orge0395cc}
 This is the downloaded image.}
 \end{figure}
 \end{column}
@@ -185,7 +185,7 @@ derived as follows:
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{4l.png}
-\caption{\label{fig:orgf47550b}
+\caption{\label{fig:org9158640}
 This is the left figure of a two-column block, showing the density of \(x1\).}
 \end{figure}
 \end{column}
@@ -195,7 +195,7 @@ This is the left figure of a two-column block, showing the density of \(x1\).}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{4r.png}
-\caption{\label{fig:org96112b0}
+\caption{\label{fig:org4bc9c2a}
 This is the right figure. It shows the density of \(x2\).}
 \end{figure}
 \end{column}

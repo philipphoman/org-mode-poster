@@ -65,7 +65,7 @@
   (setq org-latex-listings 'minted)
   '(org-export-latex-listings-langs (quote ((emacs-lisp "Lisp") (lisp "Lisp") (clojure "Lisp") (c "C") (cc "C++") (fortran "fortran") (perl "Perl") (cperl "Perl") (python "Python") (ruby "Ruby") (html "HTML") (xml "XML") (tex "TeX") (latex "TeX") (shell-script "bash") (gnuplot "Gnuplot") (ocaml "Caml") (caml "Caml") (sql "SQL") (sqlite "sql") (R-mode "R"))))
   (setq org-latex-minted-options
-     '(("linenos=true")))
+     '(("linenos=true") ("bgcolor=lightgray")))
   ; set timestamp format
   ;(setq org-export-date-timestamp-format "%FT%T%z")
   (require 'org-wc)
@@ -161,7 +161,7 @@
 
 **** Block
 :PROPERTIES:
-:BEAMER_col: 0.48
+:BEAMER_col: 0.68
 :BEAMER_opt: [T]
 :END:
 
@@ -192,7 +192,7 @@ hist(x2, col="blue", add=TRUE)
 
 **** Block
 :PROPERTIES:
-:BEAMER_col: 0.88
+:BEAMER_col: 0.78
 :BEAMER_opt: [T]
 :END:
 
@@ -302,7 +302,7 @@ derived as follows:
 :END:
 
 #+NAME: codeleft
-#+BEGIN_SRC R :file 4l.png :session org_org :exports results :results graphics
+#+BEGIN_SRC R :file 4l.png :session :exports results :results graphics
 d1 <- density(x1)
 plot(d1, col="red", lwd=3)
 #+END_SRC
@@ -322,7 +322,7 @@ plot(d1, col="red", lwd=3)
 :END:
 
 #+NAME: coderight
-#+BEGIN_SRC R  :file 4r.png :session org_org :exports results :results graphics
+#+BEGIN_SRC R  :file 4r.png :session :exports results :results graphics
 d2 <- density(x2)
 plot(d2, col="blue", lwd=3)
 #+END_SRC
