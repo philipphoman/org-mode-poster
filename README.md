@@ -1,5 +1,5 @@
 
-# Making scientific posters in org mode
+# Creating scientific posters with org-mode
 
 
 
@@ -17,8 +17,7 @@ the command line by running the 'make' command.
 
 ## Prerequisites
 
-This was developed and tested on a Linux Ubuntu 17.04 machine. To
-produce the poster from the command line, GNU emacs and texlive must
+To create the poster from the command line, GNU emacs and texlive must
 be installed together with some additional emacs and texlive
 packages. Specifically, the following software and associated libraries
 are required:
