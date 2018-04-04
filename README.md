@@ -60,5 +60,7 @@ Change to the org-mode-poster directory and run 'make poster'.
 
 # Built With
 
-Org-mode 9.1.7 .
+Ubuntu 17.10 on emacs
+25.2.2 and org-mode
+9.1.7.
 

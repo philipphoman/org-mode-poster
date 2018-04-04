@@ -116,4 +116,6 @@ Download the repository and run tar xvfz on the tarball.
 Change to the org-mode-poster directory and run 'make poster'.
 
 * Built With
-Org-mode src_elisp{org-version} {{{results(9.1.7)}}} .
+src_bash{lsb_release -sd} {{{results(Ubuntu 17.10)}}} on emacs
+src_elisp{emacs-version} {{{results(25.2.2)}}} and org-mode
+src_elisp{org-version} {{{results(9.1.7)}}}.

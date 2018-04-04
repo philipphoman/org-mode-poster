@@ -1,4 +1,4 @@
-% Created 2018-04-03 Tue 15:32
+% Created 2018-04-03 Tue 16:17
 % Intended LaTeX compiler: pdflatex
 \documentclass[final]{beamer}
 	         \usetheme{ph}
@@ -37,25 +37,26 @@ Philipp Homan$^{1}$
 \normalsize{Hempstead, NY}
 }
 \usetheme{default}
-\date{2018-04-03 15:31}
+\date{2018-04-03 16:17}
 \title{Using org-mode for scientific posters}
 \begin{document}
 
-\begin{frame}[fragile,label={sec:org04c7cf4}]{}
+\begin{frame}[fragile,label={sec:orgcb59795}]{}
  \begin{columns}
 \begin{column}[t]{0.45\columnwidth}
 \begin{block}{Background}
 \begin{itemize}
 \item Here we show how org-mode (version 
-9.1.7) together with emacs (version
-25.2.2) can be used to make
-decent looking scientific posters
+9.1.7) and emacs (version 
+25.2.2) can be used to make decent looking scientific
+posters
 \item With org-mode we can populate the poster with code, graphs and numbers
 from inline code in languages such as R, python, Matlab and even shell
 scripting
-\item For example, this poster was created on 2018-04-03 15:31
+\item For example, this poster was created on 2018-04-03 16:17 on
+Ubuntu 17.10.
 \item Inline code could look like this (which will produce a graph; 
-Fig. \ref{fig:orgbc6b6ab}):
+Fig. \ref{fig:org0e374d5}):
 \end{itemize}
 
 \begin{columns}
@@ -71,7 +72,7 @@ hist(x2, col="blue", add=TRUE)
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{3.png}
-\caption{\label{fig:orgbc6b6ab}
+\caption{\label{fig:org0e374d5}
 This is the output.}
 \end{figure}
 \end{column}
@@ -85,7 +86,7 @@ This is the output.}
 capabilities
 \item Some code to process the first vector from above to make a table out
 of its summary could look like this, which would result in a little
-table (Table \ref{tab:org62ea45d}) :
+table (Table \ref{tab:orgd478dd5}) :
 \end{itemize}
 
 \begin{columns}
@@ -104,7 +105,7 @@ mutate(name=c("x1", "x2"))
 \vspace{2cm}
 
 \begin{table}[htbp]
-\caption{\label{tab:org62ea45d}
+\caption{\label{tab:orgd478dd5}
 A table summarizing the two distributions.}
 \centering
 \begin{tabular}{rrrrrrl}
@@ -125,7 +126,7 @@ minimum & q1 & median & mean & q3 & maximum & name\\
 \begin{block}{Graphics}
 \begin{itemize}
 \item We can use shell scripting to grab an image with curl from the
-internet (Fig. \ref{fig:org45de491}):
+internet (Fig. \ref{fig:org0845f41}):
 \end{itemize}
 
 \begin{columns}
@@ -142,7 +143,7 @@ curl -0 https://www.gnu.org/software/emacs/images/emacs.png
 \begin{figure}[htbp]
 \centering
 \includegraphics[page=9,width=0.2\textwidth]{emacs.png}
-\caption{\label{fig:org45de491}
+\caption{\label{fig:org0845f41}
 This is the downloaded image.}
 \end{figure}
 \end{column}
@@ -188,7 +189,7 @@ derived as follows:
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{4l.png}
-\caption{\label{fig:org2b19bfd}
+\caption{\label{fig:orge5967c7}
 This is the left figure of a two-column block, showing the density of \(x1\).}
 \end{figure}
 \end{column}
@@ -198,7 +199,7 @@ This is the left figure of a two-column block, showing the density of \(x1\).}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{4r.png}
-\caption{\label{fig:org03df045}
+\caption{\label{fig:orga7dbf2c}
 This is the right figure. It shows the density of \(x2\).}
 \end{figure}
 \end{column}

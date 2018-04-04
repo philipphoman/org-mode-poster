@@ -41,11 +41,14 @@
 #+LATEX_HEADER: \newcommand{\Xoi}[1]{#1(i)}
 #+LATEX_HEADER: \newcommand{\frakPQ}[2]{\frac{\Xoi{#1}}{\Xoi{#2}}}
 #+LATEX_HEADER: \newcommand{\DKLPQ}[3]{D_{\mathrm{KL}}(#1 #3 #2)}
+#+LATEX_HEADER: \date{}
+# ----------------------------------------------------------------------
+** Latex macros                                               :ignore:
+# ----------------------------------------------------------------------
 #+LATEX_HEADER: \newcommand{\auth}{Philipp Homan, MD, PhD}
 #+LATEX_HEADER: \newcommand{\authemail}{phoman1@northwell.edu}
 #+LATEX_HEADER: \newcommand{\authtwitter}{@philipphoman}
 #+LATEX_HEADER: \newcommand{\authgithub}{github.com/philipphoman}
-#+LATEX_HEADER: \date{}
 # ----------------------------------------------------------------------
 ** Authors and affiliations                                   :ignore:
 # ----------------------------------------------------------------------
@@ -69,7 +72,28 @@
   ; Nicer formatting for code
   (setq org-latex-listings t)
   (setq org-latex-listings 'minted)
-  '(org-export-latex-listings-langs (quote ((emacs-lisp "Lisp") (lisp "Lisp") (clojure "Lisp") (c "C") (cc "C++") (fortran "fortran") (perl "Perl") (cperl "Perl") (python "Python") (ruby "Ruby") (html "HTML") (xml "XML") (tex "TeX") (latex "TeX") (shell-script "bash") (gnuplot "Gnuplot") (ocaml "Caml") (caml "Caml") (sql "SQL") (sqlite "sql") (R-mode "R"))))
+  '(org-export-latex-listings-langs 
+      (quote ((emacs-lisp "Lisp") 
+              (lisp "Lisp") 
+              (clojure "Lisp") 
+              (c "C") 
+              (cc "C++") 
+              (fortran "fortran") 
+              (perl "Perl") 
+              (cperl "Perl") 
+              (python "Python") 
+              (ruby "Ruby") 
+              (html "HTML") 
+              (xml "XML") 
+              (tex "TeX") 
+              (latex "TeX") 
+              (shell-script "bash") 
+              (gnuplot "Gnuplot") 
+              (ocaml "Caml") 
+              (caml "Caml") 
+              (sql "SQL") 
+              (sqlite "sql") 
+              (R-mode "R"))))
   (setq org-latex-minted-options
      '(("linenos=true") ("bgcolor=lightgray")))
   ; set timestamp format
@@ -134,7 +158,7 @@
 #
 #
 # ----------------------------------------------------------------------
-** End preamble                                                 :ignore:
+** End preamble                                               :ignore:
 # ----------------------------------------------------------------------
 
 * The poster
@@ -155,13 +179,14 @@
 :BEAMER_env: block
 :END:
 - Here we show how org-mode (version src_elisp{org-version}
-  {{{results(9.1.7)}}}) together with emacs (version
-  src_elisp{emacs-version} {{{results(25.2.2)}}}) can be used to make
-  decent looking scientific posters
+  {{{results(9.1.7)}}}) and emacs (version src_elisp{emacs-version}
+  {{{results(25.2.2)}}}) can be used to make decent looking scientific
+  posters
 - With org-mode we can populate the poster with code, graphs and numbers
   from inline code in languages such as R, python, Matlab and even shell
   scripting
-- For example, this poster was created on {{{time(%Y-%m-%d %H:%M)}}}
+- For example, this poster was created on {{{time(%Y-%m-%d %H:%M)}}} on
+  src_bash{lsb_release -sd} {{{results(Ubuntu 17.10)}}}.
 - Inline code could look like this (which will produce a graph; 
   Fig. [[figcode1]]):
 
