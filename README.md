@@ -11,7 +11,8 @@ Philipp Homan <phoman1 at northwell dot edu>
 # Getting Started
 
 This is a simple template to produce a scientific poster with emacs and
-org-mode.
+org-mode. It includes a Makefile so that the poster can be created from
+the command line by running the 'make' command.
 
 
 ## Prerequisites
@@ -53,7 +54,7 @@ are required:
 Download the repository and run tar xvfz on the tarball.
 
 
-# Producing the poster
+# Creating the poster
 
 Change to the org-mode-poster directory and run 'make poster'.
 

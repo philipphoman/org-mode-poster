@@ -88,7 +88,8 @@
 Philipp Homan <phoman1 at northwell dot edu>
 * Getting Started
 This is a simple template to produce a scientific poster with emacs and
-org-mode.
+org-mode. It includes a Makefile so that the poster can be created from
+the command line by running the 'make' command.
  
 ** Prerequisites
 This was developed and tested on a Linux Ubuntu 17.04 machine. To
@@ -112,10 +113,12 @@ are required:
 * Installing
 Download the repository and run tar xvfz on the tarball.
 
-* Producing the poster
+* Creating the poster
 Change to the org-mode-poster directory and run 'make poster'.
 
 * Built With
 src_bash{lsb_release -sd} {{{results(Ubuntu 17.10)}}} on emacs
 src_elisp{emacs-version} {{{results(25.2.2)}}} and org-mode
 src_elisp{org-version} {{{results(9.1.7)}}}.
+
+

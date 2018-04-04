@@ -1,4 +1,4 @@
-% Created 2018-04-03 Tue 16:17
+% Created 2018-04-04 Wed 12:05
 % Intended LaTeX compiler: pdflatex
 \documentclass[final]{beamer}
 	         \usetheme{ph}
@@ -23,11 +23,11 @@
 \newcommand{\Xoi}[1]{#1(i)}
 \newcommand{\frakPQ}[2]{\frac{\Xoi{#1}}{\Xoi{#2}}}
 \newcommand{\DKLPQ}[3]{D_{\mathrm{KL}}(#1 #3 #2)}
+\date{}
 \newcommand{\auth}{Philipp Homan, MD, PhD}
 \newcommand{\authemail}{phoman1@northwell.edu}
 \newcommand{\authtwitter}{@philipphoman}
 \newcommand{\authgithub}{github.com/philipphoman}
-\date{}
 \author{
 Philipp Homan$^{1}$
 \\
@@ -37,11 +37,11 @@ Philipp Homan$^{1}$
 \normalsize{Hempstead, NY}
 }
 \usetheme{default}
-\date{2018-04-03 16:17}
+\date{2018-04-04 12:05}
 \title{Using org-mode for scientific posters}
 \begin{document}
 
-\begin{frame}[fragile,label={sec:orgcb59795}]{}
+\begin{frame}[fragile,label={sec:org2d306a8}]{}
  \begin{columns}
 \begin{column}[t]{0.45\columnwidth}
 \begin{block}{Background}
@@ -53,10 +53,10 @@ posters
 \item With org-mode we can populate the poster with code, graphs and numbers
 from inline code in languages such as R, python, Matlab and even shell
 scripting
-\item For example, this poster was created on 2018-04-03 16:17 on
+\item For example, this poster was created on 2018-04-04 12:05 on
 Ubuntu 17.10.
 \item Inline code could look like this (which will produce a graph; 
-Fig. \ref{fig:org0e374d5}):
+Fig. \ref{fig:org1e6e9a8}):
 \end{itemize}
 
 \begin{columns}
@@ -72,7 +72,7 @@ hist(x2, col="blue", add=TRUE)
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{3.png}
-\caption{\label{fig:org0e374d5}
+\caption{\label{fig:org1e6e9a8}
 This is the output.}
 \end{figure}
 \end{column}
@@ -86,7 +86,7 @@ This is the output.}
 capabilities
 \item Some code to process the first vector from above to make a table out
 of its summary could look like this, which would result in a little
-table (Table \ref{tab:orgd478dd5}) :
+table (Table \ref{tab:org79ade92}) :
 \end{itemize}
 
 \begin{columns}
@@ -105,7 +105,7 @@ mutate(name=c("x1", "x2"))
 \vspace{2cm}
 
 \begin{table}[htbp]
-\caption{\label{tab:orgd478dd5}
+\caption{\label{tab:org79ade92}
 A table summarizing the two distributions.}
 \centering
 \begin{tabular}{rrrrrrl}
@@ -126,7 +126,7 @@ minimum & q1 & median & mean & q3 & maximum & name\\
 \begin{block}{Graphics}
 \begin{itemize}
 \item We can use shell scripting to grab an image with curl from the
-internet (Fig. \ref{fig:org0845f41}):
+internet (Fig. \ref{fig:orgf5c409c}):
 \end{itemize}
 
 \begin{columns}
@@ -143,7 +143,7 @@ curl -0 https://www.gnu.org/software/emacs/images/emacs.png
 \begin{figure}[htbp]
 \centering
 \includegraphics[page=9,width=0.2\textwidth]{emacs.png}
-\caption{\label{fig:org0845f41}
+\caption{\label{fig:orgf5c409c}
 This is the downloaded image.}
 \end{figure}
 \end{column}
@@ -189,7 +189,7 @@ derived as follows:
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{4l.png}
-\caption{\label{fig:orge5967c7}
+\caption{\label{fig:orgd7d362e}
 This is the left figure of a two-column block, showing the density of \(x1\).}
 \end{figure}
 \end{column}
@@ -199,7 +199,7 @@ This is the left figure of a two-column block, showing the density of \(x1\).}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{4r.png}
-\caption{\label{fig:orga7dbf2c}
+\caption{\label{fig:orgb7b3a82}
 This is the right figure. It shows the density of \(x2\).}
 \end{figure}
 \end{column}

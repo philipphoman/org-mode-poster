@@ -21,6 +21,8 @@ LIB = lib
 
 POSTER = $(SRC)/$(PROJ)_poster.pdf
 
+README = README.md
+
 # executables
 RM = rm -Rf
 TEX = xelatex -interaction nonstopmode -shell-escape 
@@ -29,6 +31,7 @@ EMACSINIT = $(EXT)/$(PROJ)_dotemacs
 EMACS = emacs -l ../$(EMACSINIT)
 EMACSMSARGS = --batch -f org-latex-export-to-latex --kill
 EMACSPARGS =  --batch -f org-beamer-export-to-latex --kill
+EMACSRARGS = --batch -f org-md-export-to-markdown --kill
 VIEWBIN = pdfview
 PDFMERGEBIN = ext/pdfmerge
 CPBIN = cp
@@ -53,7 +56,7 @@ PDFTEXFILES = $(TEXOUTFILES:$(SRC)/%.aux=$(SRC)/%.pdf)
 # Rule for $(TEXFILES)
 # Convert every org file to LaTeX this is done from within the subfolder
 # so be careful with relative paths
-$(SRC)/%.tex: $(SRC)/%.org $(PDFLIB) $(SRC)/beamerthemeph.sty
+$(SRC)/%.tex: $(SRC)/%.org $(PDFLIB) $(SRC)/beamerthemeph.sty $(EMACSINIT)
 	@if [ "$(notdir $<)" = "$(PROJ)_poster.org" ]; then \
 		echo "Exporting poster from org to LaTeX" \
 		&& cd $(SRC) && $(EMACS) $(PROJ)_poster.org $(EMACSPARGS); \
@@ -67,13 +70,19 @@ $(SRC)/%.aux: $(SRC)/%.tex $(PDFLIB)
 	cd $(SRC) && $(TEX) $(notdir $<) 
 
 # Default entry
-all: poster 
+all: poster readme
+
+$(README): README.org $(EMACSINIT)
+	emacs -l $(EMACSINIT) README.org $(EMACSRARGS);
 
 # make poster
-poster: tex
+poster: tex 
 
 # run tex files
-tex: $(TEXOUTFILES) $(TEXFILES) 
+tex: $(TEXOUTFILES) $(TEXFILES)
+
+# convert the readme file
+readme: $(README)
 
 viewposter: poster
 	pdfview $(POSTER)
@@ -87,4 +96,4 @@ texclean:
 	$(RM) $(TEXOUT)/$(PROJ)*.aux
 
 test:
-	@echo $(POSTER) $(TEXFILES) $(ORGFILES)
+	@echo $(POSTER) $(README)
