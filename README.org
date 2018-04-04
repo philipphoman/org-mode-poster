@@ -1,4 +1,4 @@
-* Making scientific posters in org mode
+* Creating scientific posters with org-mode
 * Preamble                                                    :ignore:
 ** org specific settings                                        :ignore:
 # ----------------------------------------------------------------------
