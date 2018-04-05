@@ -84,11 +84,13 @@
 ** End preamble                                                 :ignore:
 # ----------------------------------------------------------------------
 
-* Author
-Philipp Homan <phoman1 at northwell dot edu>
+* Image                                                       :ignore:
 
 #+HTML: <p align="center">
 #+HTML: <img width=400 src="src/org-mode-poster_poster.png" /></p>
+
+* Author
+Philipp Homan <phoman1 at northwell dot edu>
 
 * Getting Started
 This is a simple template to produce a scientific poster with emacs and

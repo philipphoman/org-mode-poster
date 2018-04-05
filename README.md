@@ -2,14 +2,14 @@
 # Creating scientific posters with org-mode
 
 
+<p align="center">
+
+<img width=400 src="src/org-mode-poster_poster.png" /></p>
+
 
 # Author
 
 Philipp Homan <phoman1 at northwell dot edu>
-
-<p align="center">
-
-<img width=400 src="src/org-mode-poster_poster.png" /></p>
 
 
 # Getting Started
