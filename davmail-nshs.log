@@ -1,3 +1,0 @@
-2018-04-04 12:07:43,157 DEBUG [main] davmail  - OS Name: Linux Java version: 1.8.0_161 32 System tray not supported Current Desktop: ubuntu:GNOME
-2018-04-04 12:07:43,169 INFO  [main] davmail  - SWT not available, fallback to JDK 1.6 system tray support
-2018-04-04 12:07:43,318 INFO  [main] davmail  - DavMail Gateway 4.8.0-trunk listening on SMTP port 1027 POP port 1112 IMAP port 1145 CALDAV port 1082 LDAP port 1391 
