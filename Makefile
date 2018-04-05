@@ -10,6 +10,7 @@ PROJ = org-mode-poster
 #####################################
 # Output directory
 
+
 BUILDID=$(shell date +%Y%m%d-%H:%M:%S)
 
 # Source directory
