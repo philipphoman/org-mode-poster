@@ -76,7 +76,10 @@ $(README): README.org $(EMACSINIT)
 	emacs -l $(EMACSINIT) README.org $(EMACSRARGS);
 
 git: all
-	git add .
+	git add src/org-mode-poster*
+	git add README*
+	git add ext/*
+	git add Makefile
 	git commit -m "Regular commit"
 	git push origin master
 
