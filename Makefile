@@ -83,6 +83,7 @@ git: all
 	git add src/org-mode-poster_poster.org
 	git add src/org-mode-poster_poster.tex
 	git add src/org-mode-poster_poster.pdf
+	git add src/org-mode-poster_poster.png
 	git add README.org
 	git add README.md
 	git add ext/*
