@@ -1,4 +1,7 @@
 * Creating scientific posters with org-mode
+
+#+ATTR_LATEX: :width 0.5\textwidth
+[[file:org-mode-poster_poster.pdf]]
 * Preamble                                                    :ignore:
 ** org specific settings                                        :ignore:
 # ----------------------------------------------------------------------

@@ -1,0 +1,7 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kp}{set.seed}\PYG{p}{(}\PYG{l+m}{20180402}\PYG{p}{)}
+x1 \PYG{o}{\PYGZlt{}\PYGZhy{}} rnorm\PYG{p}{(}\PYG{l+m}{100}\PYG{p}{,} \PYG{l+m}{0}\PYG{p}{,} \PYG{l+m}{1}\PYG{p}{)}
+x2 \PYG{o}{\PYGZlt{}\PYGZhy{}} rnorm\PYG{p}{(}\PYG{l+m}{100}\PYG{p}{,} \PYG{l+m}{0.5}\PYG{p}{,} \PYG{l+m}{1}\PYG{p}{)}
+hist\PYG{p}{(}x1\PYG{p}{,} col\PYG{o}{=}\PYG{l+s}{\PYGZdq{}red\PYGZdq{}}\PYG{p}{)}
+hist\PYG{p}{(}x2\PYG{p}{,} col\PYG{o}{=}\PYG{l+s}{\PYGZdq{}blue\PYGZdq{}}\PYG{p}{,} add\PYG{o}{=}\PYG{k+kc}{TRUE}\PYG{p}{)}
+\end{Verbatim}

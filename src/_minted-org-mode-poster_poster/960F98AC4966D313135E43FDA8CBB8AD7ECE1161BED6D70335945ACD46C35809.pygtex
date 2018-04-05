@@ -1,0 +1,4 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c+c1}{\PYGZsh{} Download emacs icon from gnu.org}
+curl \PYGZhy{}0 https://www.gnu.org/software/emacs/images/emacs.png
+\end{Verbatim}
