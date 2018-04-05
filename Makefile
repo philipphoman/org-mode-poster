@@ -79,8 +79,12 @@ $(README): README.org $(EMACSINIT)
 	emacs -l $(EMACSINIT) README.org $(EMACSRARGS);
 
 git: all
-	git add src/org-mode-poster*
-	git add README*
+	convert $(POSTER) $(SRC)/org-mode-poster_poster.png
+	git add src/org-mode-poster_poster.org
+	git add src/org-mode-poster_poster.tex
+	git add src/org-mode-poster_poster.pdf
+	git add README.org
+	git add README.md
 	git add ext/*
 	git add Makefile
 	git commit -m "Automatic commit of successful build $(BUILDID)"

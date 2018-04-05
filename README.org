@@ -87,6 +87,9 @@
 * Author
 Philipp Homan <phoman1 at northwell dot edu>
 
+#+HTML: <p align="center">
+#+HTML: <img width=400 src="src/org-mode-poster_poster.png" /></p>
+
 * Getting Started
 This is a simple template to produce a scientific poster with emacs and
 org-mode. It includes a Makefile so that the poster can be created from
