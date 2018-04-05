@@ -371,3 +371,4 @@ plot(d2, col="blue", lwd=3)
 - This little example is meant to show how versatile org-mode is
 - Scientific posters can be produced with a simple text editor 
 
+	
