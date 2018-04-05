@@ -10,6 +10,8 @@ PROJ = org-mode-poster
 #####################################
 # Output directory
 
+BUILDID=$(shell date +%Y%m%d-%H:%M:%S)
+
 # Source directory
 SRC = src
 
@@ -80,7 +82,7 @@ git: all
 	git add README*
 	git add ext/*
 	git add Makefile
-	git commit -m "Regular commit"
+	git commit -m "Automatic commit of successful build $(BUILDID)"
 	git push origin master
 
 # make poster
