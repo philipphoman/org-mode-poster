@@ -1,7 +1,4 @@
 * Creating scientific posters with org-mode
-
-#+ATTR_LATEX: :width 0.5\textwidth
-[[file:org-mode-poster_poster.pdf]]
 * Preamble                                                    :ignore:
 ** org specific settings                                        :ignore:
 # ----------------------------------------------------------------------
@@ -89,6 +86,7 @@
 
 * Author
 Philipp Homan <phoman1 at northwell dot edu>
+
 * Getting Started
 This is a simple template to produce a scientific poster with emacs and
 org-mode. It includes a Makefile so that the poster can be created from

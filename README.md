@@ -1,8 +1,6 @@
 
 # Creating scientific posters with org-mode
 
-<org-mode-poster_poster.pdf>
-
 
 
 # Author
