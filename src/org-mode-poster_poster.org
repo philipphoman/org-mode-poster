@@ -214,8 +214,7 @@ hist(x2, col="blue", add=TRUE)
 :PROPERTIES:
 :BEAMER_env: block
 :END:
-- In addition to inline code, we can also produce tables
-- Tables are very powerful in org-mode, they even include spreadsheet
+- Tables are powerful in org-mode and even include spreadsheet
   capabilities
 - Some code to process the first vector from above to make a table out
   of its summary could look like this, which would result in a little
@@ -240,7 +239,7 @@ mutate(name=c("x1", "x2"))
 #+END_SRC
 
 \vspace{2cm}
-
+\small
 #+CAPTION: A table summarizing the two distributions.
 #+NAME: tabcode2
 #+RESULTS[9d0ec7348265a5cb6de39440ff06a8dbb8e5ecf1]: code2
@@ -291,8 +290,7 @@ curl -0 https://www.gnu.org/software/emacs/images/emacs.png
 :BEAMER_env: block
 :END:
 
-- We can easily include math
-- For example, let's describe how to compute the distance between the
+- Let's describe how to compute the distance between the
   two simulated distributions $x1$ and $x2$ from before:
 
 **** Block
@@ -301,21 +299,23 @@ curl -0 https://www.gnu.org/software/emacs/images/emacs.png
 :BEAMER_opt: [T]
 :END:
 
+\small
 The Kullback-Leibler (KL) divergence measures the difference between two
 probability distributions (i.e., the loss of information when one
 distribution is used to approximate another). The KL divergence is thus
 defined as
-
+#
 \begin{align} 
 \label{eq:KL} 
 \DKLPQ{P}{Q}{\|} = \sumin \Xoi{P} \log \frakPQ{P}{Q}
 \end{align} 
-
+#
 with $P$ and $Q$ being two probability distribution functions and $n$
 the number of sample points. Since $\DKLPQ{P}{Q}{\|}$ is not equal to
 $\DKLPQ{Q}{P}{\|}$, a symmetric variation of the KL divergence can be
 derived as follows:
-
+#
+\small
 \begin{align} 
 \label{eq:KL2} 
 \DKLPQ{P}{Q}{,} = \sumin \Big(\Xoi{P} \log \frakPQ{P}{Q} + \Xoi{Q} \log \frakPQ{Q}{P} \Big).
@@ -368,7 +368,7 @@ plot(d2, col="blue", lwd=3)
 :PROPERTIES:
 :BEAMER_env: block
 :END:
-- This little example is meant to show how versatile org-mode is
+- This example is meant to show how versatile org-mode is
 - Scientific posters can be produced with a simple text editor 
 
 	

@@ -1,4 +1,4 @@
-% Created 2018-04-30 Mon 18:11
+% Created 2018-05-01 Tue 00:19
 % Intended LaTeX compiler: pdflatex
 \documentclass[final]{beamer}
 	         \usetheme{ph}
@@ -37,26 +37,26 @@ Philipp Homan$^{1}$
 \normalsize{Hempstead, NY}
 }
 \usetheme{default}
-\date{2018-04-30 18:11}
+\date{2018-05-01 00:19}
 \title{Using org-mode for scientific posters}
 \begin{document}
 
-\begin{frame}[fragile,label={sec:org7606ceb}]{}
+\begin{frame}[fragile,label={sec:orgf72e699}]{}
  \begin{columns}
 \begin{column}[t]{0.45\columnwidth}
 \begin{block}{Background}
 \begin{itemize}
 \item Here we show how org-mode (version 
-9.1.9) and emacs (version 
-25.1.1) can be used to make decent looking scientific
+9.1.7) and emacs (version 
+25.2.2) can be used to make decent looking scientific
 posters
 \item With org-mode we can populate the poster with code, graphs and numbers
 from inline code in languages such as R, python, Matlab and even shell
 scripting
-\item For example, this poster was created on 2018-04-30 18:11 on
-Ubuntu 17.04.
+\item For example, this poster was created on 2018-05-01 00:19 on
+Ubuntu 17.10.
 \item Inline code could look like this (which will produce a graph; 
-Fig. \ref{fig:orga017b06}):
+Fig. \ref{fig:org2e838e7}):
 \end{itemize}
 
 \begin{columns}
@@ -72,7 +72,7 @@ hist(x2, col="blue", add=TRUE)
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{3.png}
-\caption{\label{fig:orga017b06}
+\caption{\label{fig:org2e838e7}
 This is the output.}
 \end{figure}
 \end{column}
@@ -81,12 +81,11 @@ This is the output.}
 
 \begin{block}{Inline code and tables}
 \begin{itemize}
-\item In addition to inline code, we can also produce tables
-\item Tables are very powerful in org-mode, they even include spreadsheet
+\item Tables are powerful in org-mode and even include spreadsheet
 capabilities
 \item Some code to process the first vector from above to make a table out
 of its summary could look like this, which would result in a little
-table (Table \ref{tab:orgaa56099}) :
+table (Table \ref{tab:org6fc9eaf}) :
 \end{itemize}
 
 \begin{columns}
@@ -103,10 +102,8 @@ mutate(name=c("x1", "x2"))
 \end{minted}
 
 \vspace{2cm}
-
+\small
 \begin{table}[htbp]
-\caption{\label{tab:orgaa56099}
-A table summarizing the two distributions.}
 \centering
 \begin{tabular}{rrrrrrl}
 \hline
@@ -116,6 +113,9 @@ minimum & q1 & median & mean & q3 & maximum & name\\
 -2.17 & -0.45 & 0.07 & 0.13 & 0.85 & 2.23 & x2\\
 \hline
 \end{tabular}
+\caption{\label{tab:org6fc9eaf}
+A table summarizing the two distributions.}
+
 \end{table}
 \end{column}
 \end{columns}
@@ -126,7 +126,7 @@ minimum & q1 & median & mean & q3 & maximum & name\\
 \begin{block}{Graphics}
 \begin{itemize}
 \item We can use shell scripting to grab an image with curl from the
-internet (Fig. \ref{fig:orgf86c194}):
+internet (Fig. \ref{fig:orgcf4e1c0}):
 \end{itemize}
 
 \begin{columns}
@@ -143,7 +143,7 @@ curl -0 https://www.gnu.org/software/emacs/images/emacs.png
 \begin{figure}[htbp]
 \centering
 \includegraphics[page=9,width=0.2\textwidth]{emacs.png}
-\caption{\label{fig:orgf86c194}
+\caption{\label{fig:orgcf4e1c0}
 This is the downloaded image.}
 \end{figure}
 \end{column}
@@ -152,28 +152,26 @@ This is the downloaded image.}
 
 \begin{block}{Math}
 \begin{itemize}
-\item We can easily include math
-\item For example, let's describe how to compute the distance between the
+\item Let's describe how to compute the distance between the
 two simulated distributions \(x1\) and \(x2\) from before:
 \end{itemize}
 
 \begin{columns}
 \begin{column}[T]{0.78\columnwidth}
+\small
 The Kullback-Leibler (KL) divergence measures the difference between two
 probability distributions (i.e., the loss of information when one
 distribution is used to approximate another). The KL divergence is thus
 defined as
-
 \begin{align} 
 \label{eq:KL} 
 \DKLPQ{P}{Q}{\|} = \sumin \Xoi{P} \log \frakPQ{P}{Q}
 \end{align} 
-
 with \(P\) and \(Q\) being two probability distribution functions and \(n\)
 the number of sample points. Since \(\DKLPQ{P}{Q}{\|}\) is not equal to
 \(\DKLPQ{Q}{P}{\|}\), a symmetric variation of the KL divergence can be
 derived as follows:
-
+\small
 \begin{align} 
 \label{eq:KL2} 
 \DKLPQ{P}{Q}{,} = \sumin \Big(\Xoi{P} \log \frakPQ{P}{Q} + \Xoi{Q} \log \frakPQ{Q}{P} \Big).
@@ -189,7 +187,7 @@ derived as follows:
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{4l.png}
-\caption{\label{fig:org9548e99}
+\caption{\label{fig:org60e8eb6}
 This is the left figure of a two-column block, showing the density of \(x1\).}
 \end{figure}
 \end{column}
@@ -199,7 +197,7 @@ This is the left figure of a two-column block, showing the density of \(x1\).}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{4r.png}
-\caption{\label{fig:org6fd0f3f}
+\caption{\label{fig:org80c9647}
 This is the right figure. It shows the density of \(x2\).}
 \end{figure}
 \end{column}
@@ -208,7 +206,7 @@ This is the right figure. It shows the density of \(x2\).}
 
 \begin{block}{Conclusions}
 \begin{itemize}
-\item This little example is meant to show how versatile org-mode is
+\item This example is meant to show how versatile org-mode is
 \item Scientific posters can be produced with a simple text editor
 \end{itemize}
 \end{block}
