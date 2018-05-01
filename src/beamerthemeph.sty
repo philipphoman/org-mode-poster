@@ -10,7 +10,7 @@
 
 % \usefonttheme{professionalfonts} prevents beamer from overwriting
 % your fonts and is therefore needed to use specified font packages.
-%\usefonttheme{professionalfonts}
+\usefonttheme{professionalfonts}
 
 % use Adobe's Source Pro fonts:
 % Source Serif Pro: https://github.com/adobe-fonts/source-serif-pro
@@ -19,9 +19,12 @@
 %\setmainfont{Source Serif Pro}
 %\setsansfont{Source Sans Pro}
 %\setmonofont{Source Code Pro}
+\usepackage{unicode-math}
 %\usepackage[lining]{sourcesanspro}
 %\usepackage{sourceserifpro}
 %\usepackage{sourcecodepro}
+\usepackage{FiraSans}
+\setmathfont{TeX Gyre Pagella Math}
 %\usepackage[hidelinks]{hyperref}
 %\urlstyle{same}
 
@@ -66,6 +69,7 @@
 %--------------------------------------------------------------------------------
 \setbeamercolor{footline}{fg=white,bg=i6colorschemeHeadline}
 \setbeamerfont{footline}{size=\normalsize}
+%\setbeamerfont{footline}{size=\small}
 
 %--------------------------------------------------------------------------------
 % body colors and fonts
@@ -86,7 +90,8 @@
 \setbeamercolor*{example title}{fg=white,bg=i6colorscheme1}
 \setbeamerfont{example title}{size=\large,series=\bf}
 
-\setbeamercolor{alerted text}{fg=i6colorscheme1}
+%\setbeamerfont{alerted text}{series=\bf}
+\setbeamercolor{alerted text}{fg=black}
 
 \setbeamertemplate{itemize items}[circle]
 \setbeamertemplate{navigation symbols}{}  % no navigation on a poster
@@ -160,7 +165,7 @@
   %  \rule{0pt}{2pt}
   %\end{beamercolorbox}
 
-  \begin{columns}[c,onlytextwidth]
+  \begin{columns}[t,onlytextwidth]
 	\column{.35\textwidth}
 	   %\begin{beamercolorbox}[leftskip=-0.5cm,wd=\columnwidth, ht=3cm]{logo}
 	   \begin{beamercolorbox}[leftskip=-0.5cm,wd=\columnwidth, ht=4cm]{logo}
@@ -183,7 +188,6 @@
     %  \includegraphics[width=0.5in]{github.pdf} & github.com/philipphoman \\
     % \end{tabular}
     % \vspace{-0.2ex}
-
 
     \begin{tabular}{rlrlrl}
       %\textbf{Philipp Homan, MD, PhD} & & & & & \\
