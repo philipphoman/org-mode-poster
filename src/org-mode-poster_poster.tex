@@ -1,4 +1,4 @@
-% Created 2018-05-01 Tue 16:28
+% Created 2018-05-01 Tue 16:31
 % Intended LaTeX compiler: pdflatex
 \documentclass[final]{beamer}
 	         \usetheme{ph}
@@ -31,17 +31,18 @@
 \author{
 Philipp Homan$^{1}$
 \\
+\vspace{5mm}
 \normalsize{$^{1}$Department of Psychiatry,}
 \normalsize{The Donald and Barbara Zucker}
 \normalsize{School of Medicine at Northwell/Hofstra,}
 \normalsize{Hempstead, NY}
 }
 \usetheme{default}
-\date{2018-05-01 16:28}
+\date{2018-05-01 16:31}
 \title{Using org-mode for scientific posters}
 \begin{document}
 
-\begin{frame}[fragile,label={sec:org88bd8a7}]{}
+\begin{frame}[fragile,label={sec:org48aedac}]{}
  \begin{columns}
 \begin{column}[t]{0.45\columnwidth}
 \begin{block}{Background}
@@ -53,26 +54,26 @@ posters
 \item With org-mode we can populate the poster with code, graphs and numbers
 from inline code in languages such as R, python, Matlab and even shell
 scripting
-\item For example, this poster was created on 2018-05-01 16:28 on
+\item For example, this poster was created on 2018-05-01 16:31 on
 Ubuntu 17.04.
 \item Inline code could look like this (which will produce a graph; 
-Fig. \ref{fig:orge07790b}):
+Fig. \ref{fig:orgf02b88f}):
 \end{itemize}
 
 \begin{columns}
 \begin{column}[T]{0.68\columnwidth}
-\begin{verbatim}
+\begin{minted}[linenos=true,bgcolor=lightgray]{r}
 set.seed(20180402)
 x1 <- rnorm(100, 0, 1)
 x2 <- rnorm(100, 0.5, 1)
 hist(x1, col="red")
 hist(x2, col="blue", add=TRUE)
-\end{verbatim}
+\end{minted}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{3.png}
-\caption{\label{fig:orge07790b}
+\caption{\label{fig:orgf02b88f}
 This is the output.}
 \end{figure}
 \end{column}
@@ -85,12 +86,12 @@ This is the output.}
 capabilities
 \item Some code to process the first vector from above to make a table out
 of its summary could look like this, which would result in a little
-table (Table \ref{tab:org7ca0bf7}) :
+table (Table \ref{tab:orga274aaf}) :
 \end{itemize}
 
 \begin{columns}
 \begin{column}[T]{0.78\columnwidth}
-\begin{verbatim}
+\begin{minted}[linenos=true,bgcolor=lightgray]{r}
 library(broom)
 library(dplyr)
 t1 <- tidy(round(summary(x1), 2)) 
@@ -99,11 +100,13 @@ t2 <- tidy(round(summary(x2), 2))
 # This will export as a table
 rbind(t1, t2) %>%
 mutate(name=c("x1", "x2"))
-\end{verbatim}
+\end{minted}
 
 \vspace{2cm}
 \small
 \begin{table}[htbp]
+\caption{\label{tab:orga274aaf}
+A table summarizing the two distributions.}
 \centering
 \begin{tabular}{rrrrrrl}
 \hline
@@ -113,9 +116,6 @@ minimum & q1 & median & mean & q3 & maximum & name\\
 -2.17 & -0.45 & 0.07 & 0.13 & 0.85 & 2.23 & x2\\
 \hline
 \end{tabular}
-\caption{\label{tab:org7ca0bf7}
-A table summarizing the two distributions.}
-
 \end{table}
 \end{column}
 \end{columns}
@@ -126,16 +126,16 @@ A table summarizing the two distributions.}
 \begin{block}{Graphics}
 \begin{itemize}
 \item We can use shell scripting to grab an image with curl from the
-internet (Fig. \ref{fig:orge518712}):
+internet (Fig. \ref{fig:orgcbcb8d7}):
 \end{itemize}
 
 \begin{columns}
 \begin{column}[T]{0.78\columnwidth}
 \footnotesize
-\begin{verbatim}
+\begin{minted}[linenos=true,bgcolor=lightgray]{bash}
 # Download emacs icon from gnu.org
 curl -0 https://www.gnu.org/software/emacs/images/emacs.png
-\end{verbatim}
+\end{minted}
 \normalsize
 
 \vspace{2cm}
@@ -143,7 +143,7 @@ curl -0 https://www.gnu.org/software/emacs/images/emacs.png
 \begin{figure}[htbp]
 \centering
 \includegraphics[page=9,width=0.2\textwidth]{emacs.png}
-\caption{\label{fig:orge518712}
+\caption{\label{fig:orgcbcb8d7}
 This is the downloaded image.}
 \end{figure}
 \end{column}
@@ -187,7 +187,7 @@ derived as follows:
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{4l.png}
-\caption{\label{fig:orgf59c614}
+\caption{\label{fig:orgf1fb0dc}
 This is the left figure of a two-column block, showing the density of \(x1\).}
 \end{figure}
 \end{column}
@@ -197,7 +197,7 @@ This is the left figure of a two-column block, showing the density of \(x1\).}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=.9\linewidth]{4r.png}
-\caption{\label{fig:org5b61d7c}
+\caption{\label{fig:orgf00fe3b}
 This is the right figure. It shows the density of \(x2\).}
 \end{figure}
 \end{column}

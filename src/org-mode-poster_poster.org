@@ -55,6 +55,7 @@
 #+LATEX_HEADER: \author{
 #+LATEX_HEADER: Philipp Homan$^{1}$ 
 #+LATEX_HEADER: \\
+#+LATEX_HEADER: \vspace{5mm}
 #+LATEX_HEADER: \normalsize{$^{1}$Department of Psychiatry,} 
 #+LATEX_HEADER: \normalsize{The Donald and Barbara Zucker}
 #+LATEX_HEADER: \normalsize{School of Medicine at Northwell/Hofstra,}
